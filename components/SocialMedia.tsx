@@ -10,7 +10,7 @@ export const socialMedia = [
   {
     icon: <FaLinkedinIn tabIndex={0} className={socialMediaButtonStyle} />,
     title: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/juan-segundo-chavero-97610b231/',
+    href: 'https://www.linkedin.com/in/juan-segundo-chavero/',
   },
   {
     icon: <FaGithub tabIndex={0} className={socialMediaButtonStyle} />,
