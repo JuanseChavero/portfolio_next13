@@ -1,12 +1,13 @@
 'use client';
 
 import { useRef, useState } from 'react';
-import Header from '../../components/Header';
+import Heading from '../../components/Heading';
 import { TextArea, Textfield } from '../../components/Textfield';
 import useField from '../../hooks/useField';
 import emailjs from '@emailjs/browser';
 import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
 import { ArrowPathIcon, CheckCircleIcon } from '@heroicons/react/20/solid';
+import PageWrapper from '../../components/PageWrapper';
 
 export default function Contact() {
   const [name, resetName] = useField('text');
@@ -86,24 +87,18 @@ export default function Contact() {
   };
 
   return (
-    <div className="flex min-h-[calc(100vh-128px-72px)] flex-col items-center justify-center px-6 lg:px-0">
+    <PageWrapper>
       <motion.div
-        className="container flex max-w-5xl flex-col py-20"
+        className="container flex max-w-5xl flex-col"
         variants={container}
         initial="hidden"
         animate="visible"
       >
-        <motion.h3
-          className="my-4 font-header text-5xl font-bold text-orange"
-          variants={item}
-        >
-          Contact
-        </motion.h3>
+        <Heading title="Contact" variants={item} />
         <motion.div
           className="mb-6 text-left text-xl lg:text-justify"
           variants={item}
         >
-          <p>Thank you for visiting my portfolio!</p>
           <p>
             I&apos;m excited to hear about your project and see how I can help
             bring your ideas to life. Please fill out the contact form and
@@ -170,7 +165,7 @@ export default function Contact() {
                 <motion.button
                   type="button"
                   onClick={onSubmit}
-                  className={`flex h-12 w-full items-center justify-center rounded border-2 border-orange text-center text-lg font-bold uppercase tracking-widest text-orange outline-2 outline-offset-8 outline-orange transition-[background-color,outline-offset,color] hocus:bg-orange hocus:text-black hocus:outline hocus:outline-offset-4 dark:hocus:text-white ${
+                  className={`flex h-12 w-full items-center justify-center rounded border-2 border-primary text-center text-lg font-bold uppercase tracking-widest text-primary outline-2 outline-offset-8 outline-primary transition-[background-color,outline-offset,color] hocus:bg-primary hocus:text-black hocus:outline hocus:outline-offset-4 dark:hocus:text-white ${
                     isSending ? 'cursor-default' : 'cursor-pointer'
                   }`}
                 >
@@ -185,6 +180,6 @@ export default function Contact() {
           </AnimatePresence>
         </motion.form>
       </motion.div>
-    </div>
+    </PageWrapper>
   );
 }

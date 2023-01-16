@@ -13,9 +13,8 @@ module.exports = {
     extend: {
       screens: {},
       colors: {
-        orange: '#fb7e14',
-        bgColor: '@apply bg-white',
-        bgColorDark: '@apply bg-black',
+        primary: '#fb7e14',
+        secondary: '#fc8e06',
       },
       transitionProperty: {
         navbar: 'padding, background-color, backdrop-filter',

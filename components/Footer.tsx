@@ -10,7 +10,7 @@ export default function Footer() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ scale: { duration: 0.75 } }}
       >
-        <div className="h-[2px] w-full rounded-full bg-orange" />
+        <div className="h-[2px] w-full rounded-full bg-primary" />
         {socialMedia.map((media) => (
           <SocialMediaIcon
             key={media.title}
@@ -19,7 +19,7 @@ export default function Footer() {
             {...media}
           />
         ))}
-        <div className="h-[2px] w-full rounded-full bg-orange" />
+        <div className="h-[2px] w-full rounded-full bg-primary" />
       </motion.div>
       <div className="text-center">
         <span className="text-md text-gray-600 dark:text-gray-400">

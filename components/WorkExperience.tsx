@@ -60,7 +60,7 @@ export default function WorkExperience({
 
   return (
     <motion.div
-      className="container flex max-w-2xl flex-col rounded-md text-start lg:flex-row"
+      className="container flex flex-col max-w-2xl rounded-md text-start lg:flex-row"
       variants={variants}
     >
       {/* Works */}
@@ -71,7 +71,7 @@ export default function WorkExperience({
               <motion.li
                 key={company}
                 onClick={() => onClick(company)}
-                className="relative flex-1 cursor-pointer p-4 hover:bg-white/20"
+                className="relative flex-1 p-4 rounded cursor-pointer hover:bg-black/10 dark:hover:bg-white/10"
               >
                 {company}
                 <AnimatePresence>
@@ -79,15 +79,15 @@ export default function WorkExperience({
                     <motion.div
                       key={company}
                       layoutId="company"
-                      className="absolute bottom-0 right-0 left-0 -z-10 h-1 w-full lg:right-0 lg:left-auto lg:h-full lg:w-1"
+                      className="absolute bottom-0 left-0 right-0 w-full h-1 -z-10 lg:right-0 lg:left-auto lg:h-full lg:w-1"
                       initial={false}
                       animate={{ backgroundColor: '#fb7e14' }}
                       transition={{ type: 'tween', duration: 0.25 }}
                     />
                   )}
                 </AnimatePresence>
-                <div className="absolute right-0 top-0 bottom-0 hidden h-full w-1 bg-white/20 lg:block" />
-                <div className="absolute right-0 bottom-0 left-0 block h-1 w-full bg-white/20 lg:hidden" />
+                <div className="absolute top-0 bottom-0 right-0 hidden w-1 h-full bg-white/20 lg:block" />
+                <div className="absolute bottom-0 left-0 right-0 block w-full h-1 bg-white/20 lg:hidden" />
               </motion.li>
             ))}
           </LayoutGroup>
@@ -98,7 +98,7 @@ export default function WorkExperience({
       <div className="flex-1">
         {selectedExperience ? (
           <motion.dl
-            className="flex flex-col px-1 py-4 lg:px-6"
+            className="flex flex-col px-1 py-4 lg:py-2 lg:px-6"
             initial={false}
             animate={controls}
           >
@@ -107,13 +107,12 @@ export default function WorkExperience({
                 <dt className="text-sm text-gray-500 dark:text-gray-400">
                   Company
                 </dt>
-                <dd className="text-xl font-bold text-orange">
+                <dd className="text-xl font-bold text-primary">
                   <motion.a
                     href={selectedExperience.companySite}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-start font-header"
-                    whileHover={{ color: 'rgb(255, 255, 255)' }}
+                    className="flex items-start font-header hover:text-black dark:hover:text-white"
                   >
                     {selectedExperience.company}
                   </motion.a>
@@ -123,7 +122,7 @@ export default function WorkExperience({
                 <dt className="text-sm text-gray-500 dark:text-gray-400">
                   Date range
                 </dt>
-                <dd className="font-semibold300 text-base">
+                <dd className="text-base font-medium">
                   {selectedExperience.startDate} - {selectedExperience.endDate}
                 </dd>
               </div>
@@ -134,7 +133,7 @@ export default function WorkExperience({
                 <dt className="text-sm text-gray-500 dark:text-gray-400">
                   Role
                 </dt>
-                <dd className="text-base font-semibold">
+                <dd className="text-base font-medium">
                   {selectedExperience.role}
                 </dd>
               </div>
@@ -143,7 +142,7 @@ export default function WorkExperience({
                 <dt className="text-sm text-gray-500 dark:text-gray-400">
                   Modality
                 </dt>
-                <dd className="text-base font-semibold">
+                <dd className="text-base font-medium">
                   {selectedExperience.modality ?? '-'}
                 </dd>
               </div>
@@ -152,16 +151,16 @@ export default function WorkExperience({
                 <dt className="text-sm text-gray-500 dark:text-gray-400">
                   Workload
                 </dt>
-                <dd className="text-base font-semibold">
+                <dd className="text-base font-medium">
                   {selectedExperience.time ?? '-'}
                 </dd>
               </div>
             </div>
             <div className="mt-4">
-              <h5 className="mb-3 text-xl font-semibold text-orange">
+              <h5 className="mb-3 text-xl font-semibold text-primary">
                 What I did
               </h5>
-              <ul className="ml-4 list-disc space-y-3 marker:text-orange">
+              <ul className="ml-4 space-y-3 list-disc marker:text-primary">
                 {selectedExperience.contents.map((content) => (
                   <li key={content} className="pl-2 text-base text-gray-400">
                     {content}
@@ -171,7 +170,7 @@ export default function WorkExperience({
             </div>
           </motion.dl>
         ) : (
-          <div className="flex h-full w-full items-center justify-center">
+          <div className="flex items-center justify-center w-full h-full">
             Looks like something went wrong
           </div>
         )}

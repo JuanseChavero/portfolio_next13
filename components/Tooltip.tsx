@@ -24,7 +24,7 @@ export default function Tooltip({
         <RadixTooltip.Trigger asChild>{children}</RadixTooltip.Trigger>
         <RadixTooltip.Portal>
           <RadixTooltip.Content
-            className={`rounded-md bg-black/80 px-2 py-3 text-xs font-semibold leading-none tracking-wide text-orange shadow-md transition-all data-[side='left']:animate-slide-left data-[side='bottom']:animate-slide-down data-[side='top']:animate-slide-up data-[side='right']:animate-slide-right dark:bg-white ${className}`}
+            className={`rounded-md bg-black/80 px-2 py-3 text-xs font-semibold leading-none tracking-wide text-primary shadow-md transition-all data-[side='left']:animate-slide-left data-[side='bottom']:animate-slide-down data-[side='top']:animate-slide-up data-[side='right']:animate-slide-right dark:bg-white ${className}`}
             sideOffset={sideOffset}
             side={side}
           >

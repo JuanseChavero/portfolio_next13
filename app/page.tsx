@@ -46,9 +46,9 @@ export default function Home() {
 
   return (
     <PageWrapper>
-      <motion.div className="container flex max-w-5xl flex-col items-center px-5">
+      <motion.div className="container flex flex-col items-center max-w-5xl">
         <motion.div
-          className="cursor-default p-6 tracking-wider lg:ml-0"
+          className="tracking-wider"
           variants={container}
           initial="hidden"
           animate="show"
@@ -60,7 +60,7 @@ export default function Home() {
             My name is
           </motion.span>
           <motion.h1
-            className="group relative mt-2 mb-4 font-header text-7xl font-bold text-orange transition-[letter-spacing] duration-700 hover:tracking-widest"
+            className="group relative mt-2 mb-4 font-header text-7xl font-bold text-primary transition-[letter-spacing] duration-700 hover:tracking-widest"
             variants={nameVariant}
           >
             {name}
@@ -78,11 +78,11 @@ export default function Home() {
             </p>
           </motion.div>
           <br />
-          <motion.p className="text-2xl" variants={item}>
+          <motion.p className="text-2xl text-gray-400" variants={item}>
             Let&apos;s create something great together!
           </motion.p>
           <motion.div
-            className="mt-6 flex w-full flex-col items-end justify-end"
+            className="flex flex-col items-end justify-end w-full mt-6"
             variants={item}
           >
             <NextArrow content="Learn more" href="/about" />

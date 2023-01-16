@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
 import NextArrow from '../../components/NextArrow';
 import PageWrapper from '../../components/PageWrapper';
-import Header from '../../components/Header';
+import Heading from '../../components/Heading';
 import SkillCard from '../../components/SkillCard';
 
 interface SkillSectionProps {
@@ -14,8 +14,8 @@ interface SkillSectionProps {
 
 const SkillSection = ({ title, children }: SkillSectionProps) => {
   return (
-    <div className="flex flex-1 flex-col items-center justify-center rounded border bg-gradient-to-br from-orange to-black/10 p-6 shadow-inner">
-      {/* <div className="my-4 w-full rounded border-l-[6px] bg-orange"> */}
+    <div className="flex flex-1 flex-col items-center justify-center rounded border bg-gradient-to-br from-primary to-black/10 p-6 shadow-inner">
+      {/* <div className="my-4 w-full rounded border-l-[6px] bg-primary"> */}
       <h3 className="text-2xl">{title}</h3>
       {/* </div> */}
       <div className="flex flex-wrap items-center gap-2">{children}</div>
@@ -64,7 +64,7 @@ export default function Skills() {
         animate="visible"
         variants={container}
       >
-        <Header title="Skills" variants={item} titleAlignment="left" />
+        <Heading title="Skills" variants={item} titleAlignment="left" />
         <motion.p className="text-justify text-xl" variants={item}>
           I have are a very particular set of skills. Skills I have acquired
           over a very long career. Skills that make me a wonder for people like

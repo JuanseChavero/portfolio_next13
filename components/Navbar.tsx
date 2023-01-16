@@ -34,9 +34,9 @@ function NavItem({ title, to }: NavItemProps) {
       {' '}
       <motion.div
         tabIndex={0}
-        className={`relative w-[7.5rem] rounded border-2 border-orange py-2 text-center font-semibold outline-none transition-colors focus-visible:border-black dark:focus-visible:border-white ${
+        className={`relative w-[7.5rem] rounded border-2 border-primary py-2 text-center font-semibold outline-none transition-colors focus-visible:border-black dark:focus-visible:border-white ${
           !isActive
-            ? 'lg:text-orange lg:hover:bg-orange/10'
+            ? 'lg:text-primary lg:hover:bg-primary/10'
             : 'text-black dark:text-white'
         }`}
       >
@@ -46,7 +46,7 @@ function NavItem({ title, to }: NavItemProps) {
             <motion.div
               key={to}
               layoutId="background"
-              className="absolute top-0 left-0 -z-10 h-full w-full"
+              className="absolute top-0 left-0 w-full h-full -z-10"
               initial={false}
               animate={{ backgroundColor: '#fb7e14' }}
               transition={{ type: 'tween', duration: 0.5 }}
@@ -149,7 +149,7 @@ export default function Navbar() {
   return (
     <motion.header
       className={`z-30 flex w-full justify-center px-6 transition-navbar xl:px-10 ${
-        isScrolled ? 'bg-white/10 py-3 backdrop-blur-sm' : 'py-8'
+        isScrolled ? '' : 'py-8'
       }`}
       initial="hidden"
       animate="visible"
@@ -159,8 +159,12 @@ export default function Navbar() {
         visible: { opacity: 1, translateY: 0 },
       }}
     >
-      <nav className={`flex w-full items-center justify-between gap-1`}>
+      <nav
+        className={`flex w-full items-center justify-between gap-2 sm:gap-5`}
+      >
         <Logo />
+        <hr className="h-[2px] w-full rounded-full border-none bg-primary" />
+
         <ul className="hidden items-center divide-x-[0.5rem] divide-white dark:divide-black lg:flex">
           <LayoutGroup>
             {routes.map((route) => (
@@ -170,6 +174,8 @@ export default function Navbar() {
             ))}
           </LayoutGroup>
         </ul>
+        <hr className="hidden h-[2px] w-full rounded-full border-none bg-primary lg:inline" />
+
         <div className="hidden lg:flex">
           <ThemeSwitch />
         </div>
@@ -185,11 +191,11 @@ export default function Navbar() {
           </div>
           <motion.button
             onClick={onClickModal}
-            className="z-[101] h-12 w-12 rounded border-2 border-orange p-2"
+            className="z-[101] h-12 w-12 rounded border-2 border-primary p-2"
           >
             <svg
               viewBox="0 0 20 20"
-              className="flex h-full w-full flex-col items-center justify-center "
+              className="flex flex-col items-center justify-center w-full h-full "
             >
               <Path
                 variants={{
@@ -199,7 +205,7 @@ export default function Navbar() {
                 className={
                   isOpen
                     ? 'fill-white stroke-white'
-                    : 'fill-orange stroke-orange'
+                    : 'fill-primary stroke-primary'
                 }
               />
               <Path
@@ -209,7 +215,7 @@ export default function Navbar() {
                   open: { opacity: 0 },
                 }}
                 transition={{ duration: 0.1 }}
-                className="fill-orange stroke-orange"
+                className="fill-primary stroke-primary"
               />
               <Path
                 variants={{
@@ -219,7 +225,7 @@ export default function Navbar() {
                 className={
                   isOpen
                     ? 'fill-white stroke-white'
-                    : 'fill-orange stroke-orange'
+                    : 'fill-primary stroke-primary'
                 }
               />
             </svg>
@@ -227,7 +233,7 @@ export default function Navbar() {
           <AnimatePresence>
             {isOpen && (
               <motion.aside
-                className="fixed top-0 bottom-0 right-0 z-[99] h-[40rem] w-72 rounded-bl-3xl bg-orange shadow-2xl outline outline-white backdrop-blur-sm"
+                className="fixed top-0 bottom-0 right-0 z-[99] h-[40rem] w-72 rounded-bl-3xl bg-primary shadow-2xl outline outline-white backdrop-blur-sm"
                 initial={{ opacity: 0, x: '100%' }}
                 animate={{
                   opacity: 1,
@@ -242,7 +248,7 @@ export default function Navbar() {
                   transition: { type: 'spring', bounce: 0, duration: 1.5 },
                 }}
               >
-                <ul className="mt-20 flex flex-col gap-10 p-6 text-center">
+                <ul className="flex flex-col gap-10 p-6 mt-20 text-center">
                   <LayoutGroup>
                     {routes.map((route) => (
                       <li key={route.to} onClick={() => close()}>

@@ -13,7 +13,7 @@ export default function Layout({ children }: { children: ReactNode }) {
   return (
     <main
       data-is-open={isOpen}
-      className={`flex min-h-screen flex-col bg-slate-50 text-black antialiased selection:bg-orange selection:text-black dark:bg-black dark:text-white selection:dark:text-white`}
+      className={`flex min-h-screen flex-col bg-slate-50 text-black antialiased selection:bg-primary selection:text-black dark:bg-black dark:text-white selection:dark:text-white`}
     >
       <ScrollToTop />
       <Navbar />
