@@ -23,7 +23,7 @@ export default function Head() {
         property="og:description"
         content="I am a software developer with a passion for creating elegant, efficient, and user-friendly solutions. My skills include expertise in various programming languages and frameworks such as React, Flutter, NextJS, NodeJS, Express, Typescript and more."
       />
-      <meta property="og:url" content="https://www.yourwebsite.com" />
+      <meta property="og:url" content="https://juansegundochavero.vercel.app" />
       <meta property="og:type" content="website" />
       <meta
         property="og:site_name"
