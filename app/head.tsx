@@ -4,14 +4,11 @@ export default function Head() {
   return (
     <>
       <title>Juan S. Chavero | Portfolio</title>
+      <meta name="robots" content="all" />
       <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"
       />
-      {/* <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no"
-      /> */}
       <meta
         name="description"
         content="I am a software developer with a passion for creating elegant, efficient, and user-friendly solutions. My skills include expertise in various programming languages and frameworks such as React, Flutter, NextJS, NodeJS, Express, Typescript and more."
