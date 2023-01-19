@@ -19,7 +19,7 @@ export const containerVariant: Variants = {
 export const itemVariant: Variants = {
   hidden: {
     opacity: 0,
-    y: 200,
+    y: 100,
   },
   visible: {
     opacity: 1,
