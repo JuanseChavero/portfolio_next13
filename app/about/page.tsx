@@ -10,15 +10,15 @@ import { containerVariant, itemVariant } from '../../utils/motion';
 export default function About() {
   return (
     <PageWrapper>
-      <div className="container flex flex-col max-w-5xl md:text-justify">
+      <div className="container flex max-w-5xl flex-col overflow-y-hidden md:text-justify">
         <motion.div
-          className="text-lg"
+          className="overflow-y-visible text-lg"
           initial="hidden"
           animate="visible"
           variants={containerVariant}
         >
           <Heading title="Introduction" variants={itemVariant} />
-          <div className="space-y-4">
+          <div className="space-y-4 text-lg">
             <motion.p variants={itemVariant}>
               Hi, my name is{' '}
               <span className="text-secondary">Juan Segundo Chavero</span> and I
@@ -37,7 +37,7 @@ export default function About() {
               systems.
             </motion.p>
           </div>
-          <motion.div className="flex flex-col items-center justify-center mt-2 text-center">
+          <motion.div className="mt-2 flex flex-col items-center justify-center text-center">
             <Heading
               title="My professional experience"
               titleSize="small"
@@ -48,7 +48,7 @@ export default function About() {
             <WorkExperience experiences={experiences} variants={itemVariant} />
           </motion.div>
           <motion.div
-            className="flex justify-end w-full mt-6"
+            className="mt-3 flex w-full justify-end"
             variants={itemVariant}
           >
             <NextArrow content="Check out my skills" href="/skills" />

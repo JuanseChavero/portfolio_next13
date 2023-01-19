@@ -14,14 +14,17 @@ export default function Projects() {
   return (
     <PageWrapper>
       <motion.div
-        className="container flex flex-col items-start max-w-5xl"
+        className="container flex max-w-5xl flex-col items-start"
         initial="hidden"
         animate="visible"
         variants={containerVariant}
       >
         <Heading title="Projects" variants={itemVariant} />
-        <div className="flex flex-col justify-between w-full gap-4 mb-6 md:flex-row md:items-center">
-          <p className="text-lg">
+        <motion.div
+          className="mb-6 flex w-full flex-col justify-between gap-4 md:flex-row md:items-center"
+          variants={itemVariant}
+        >
+          <p className="text-xl">
             I&apos;m currently working on a{' '}
             <a
               className="text-primary underline-offset-2 hover:underline"
@@ -46,14 +49,14 @@ export default function Projects() {
               </Tooltip>
             </a>
           </div>
-        </div>
-        <div className="flex flex-col w-full gap-4 lg:gap-12">
+        </motion.div>
+        <div className="flex w-full flex-col gap-4 lg:gap-12">
           {projects.map((project) => (
             <Project key={project.name} {...project} />
           ))}
         </div>
         <motion.div
-          className="flex justify-end w-full mt-6"
+          className="mt-6 flex w-full justify-end"
           variants={itemVariant}
         >
           <NextArrow content="Contact me" href="/contact" />
