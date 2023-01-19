@@ -16,7 +16,6 @@ export default function Tooltip({
   className,
   children,
   sideOffset = 10,
-  defaultOpen = false,
 }: TooltipProps) {
   return (
     <RadixTooltip.Provider delayDuration={100}>
@@ -24,7 +23,7 @@ export default function Tooltip({
         <RadixTooltip.Trigger asChild>{children}</RadixTooltip.Trigger>
         <RadixTooltip.Portal>
           <RadixTooltip.Content
-            className={`rounded-md bg-black/80 px-2 py-3 text-xs font-semibold leading-none tracking-wide text-primary shadow-md transition-all data-[side='left']:animate-slide-left data-[side='bottom']:animate-slide-down data-[side='top']:animate-slide-up data-[side='right']:animate-slide-right dark:bg-white ${className}`}
+            className={`rounded-md bg-black/80 px-2 py-3 leading-none tracking-wide text-white shadow-md transition-all data-[side='left']:animate-slide-left data-[side='bottom']:animate-slide-down data-[side='top']:animate-slide-up data-[side='right']:animate-slide-right dark:bg-white dark:text-primary ${className} text-xs`}
             sideOffset={sideOffset}
             side={side}
           >

@@ -5,74 +5,52 @@ import NextArrow from '../../components/NextArrow';
 import PageWrapper from '../../components/PageWrapper';
 import Heading from '../../components/Heading';
 import WorkExperience, { experiences } from '../../components/WorkExperience';
+import { containerVariant, itemVariant } from '../../utils/motion';
 
 export default function About() {
-  const container = {
-    hidden: {
-      opacity: 0,
-    },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.25,
-      },
-    },
-  };
-
-  const item = {
-    hidden: {
-      opacity: 0,
-      y: 200,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        y: {
-          type: 'spring',
-          bounce: 0,
-        },
-      },
-    },
-  };
-
   return (
     <PageWrapper>
       <div className="container flex flex-col max-w-5xl md:text-justify">
         <motion.div
-          className="px-6 space-y-6 text-lg"
+          className="text-lg"
           initial="hidden"
           animate="visible"
-          variants={container}
+          variants={containerVariant}
         >
-          <Heading title="Introduction" variants={item} />
-          <motion.p variants={item}>
-            Hi, my name is{' '}
-            <span className="text-secondary">Juan Segundo Chavero</span> and I
-            am a <span className="text-secondary">full-stack developer</span>{' '}
-            and <span className="text-secondary">systems analyst</span> based in
-            Argentina. I have had a lifelong interest in computers and software.
-            My career in Systems Analysis deepened my understanding of the
-            software development process. Additionally, I have developed my
-            skills through self-study, familiarizing myself with general
-            programming skills, various languages and frameworks.
-          </motion.p>
-          <motion.p variants={item}>
-            As of today, I&apos;m lucky to say that I have experience working on
-            projects that required technical proficiency and problem-solving,
-            developing and maintaining large-scale software systems.
-          </motion.p>
-          <motion.div className="flex flex-col items-center justify-center mt-12 text-center">
+          <Heading title="Introduction" variants={itemVariant} />
+          <div className="space-y-4">
+            <motion.p variants={itemVariant}>
+              Hi, my name is{' '}
+              <span className="text-secondary">Juan Segundo Chavero</span> and I
+              am a <span className="text-secondary">full-stack developer</span>{' '}
+              and <span className="text-secondary">systems analyst</span> based
+              in Argentina. I have had a lifelong interest in computers and
+              software. My career in Systems Analysis deepened my understanding
+              of the software development process. Additionally, I have
+              developed my skills through self-study, familiarizing myself with
+              general programming skills, various languages and frameworks.
+            </motion.p>
+            <motion.p variants={itemVariant}>
+              As of today, I&apos;m lucky to say that I have experience working
+              on projects that required technical proficiency and
+              problem-solving, developing and maintaining large-scale software
+              systems.
+            </motion.p>
+          </div>
+          <motion.div className="flex flex-col items-center justify-center mt-2 text-center">
             <Heading
               title="My professional experience"
               titleSize="small"
               titleAlignment="center"
-              variants={item}
+              variants={itemVariant}
             />
-            <div className="my-2" />
-            <WorkExperience experiences={experiences} variants={item} />
+            <div className="my-1" />
+            <WorkExperience experiences={experiences} variants={itemVariant} />
           </motion.div>
-          <motion.div className="flex justify-end w-full" variants={item}>
+          <motion.div
+            className="flex justify-end w-full mt-6"
+            variants={itemVariant}
+          >
             <NextArrow content="Check out my skills" href="/skills" />
           </motion.div>
         </motion.div>

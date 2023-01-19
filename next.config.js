@@ -6,7 +6,7 @@ const nextConfig = {
     },
     'react-icons': {
       transform: 'react-icons/fa/{{member}}',
-      skipDefaultConversion: true,
+      transform: 'react-icons/si/{{member}}',
     },
   },
   experimental: {

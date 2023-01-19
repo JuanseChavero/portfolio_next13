@@ -86,8 +86,8 @@ export default function WorkExperience({
                     />
                   )}
                 </AnimatePresence>
-                <div className="absolute top-0 bottom-0 right-0 hidden w-1 h-full bg-white/20 lg:block" />
-                <div className="absolute bottom-0 left-0 right-0 block w-full h-1 bg-white/20 lg:hidden" />
+                <div className="absolute top-0 bottom-0 right-0 hidden w-1 h-full -z-20 bg-gray-500/50 lg:block" />
+                <div className="absolute bottom-0 left-0 right-0 block w-full h-1 -z-20 bg-white/20 lg:hidden" />
               </motion.li>
             ))}
           </LayoutGroup>
@@ -122,7 +122,7 @@ export default function WorkExperience({
                 <dt className="text-sm text-gray-500 dark:text-gray-400">
                   Date range
                 </dt>
-                <dd className="text-base font-medium">
+                <dd className="text-base font-medium text-gray-700 dark:text-gray-300">
                   {selectedExperience.startDate} - {selectedExperience.endDate}
                 </dd>
               </div>
@@ -133,7 +133,7 @@ export default function WorkExperience({
                 <dt className="text-sm text-gray-500 dark:text-gray-400">
                   Role
                 </dt>
-                <dd className="text-base font-medium">
+                <dd className="text-base font-medium text-gray-700 dark:text-gray-300">
                   {selectedExperience.role}
                 </dd>
               </div>
@@ -142,7 +142,7 @@ export default function WorkExperience({
                 <dt className="text-sm text-gray-500 dark:text-gray-400">
                   Modality
                 </dt>
-                <dd className="text-base font-medium">
+                <dd className="text-base font-medium text-gray-700 dark:text-gray-300">
                   {selectedExperience.modality ?? '-'}
                 </dd>
               </div>
@@ -151,7 +151,7 @@ export default function WorkExperience({
                 <dt className="text-sm text-gray-500 dark:text-gray-400">
                   Workload
                 </dt>
-                <dd className="text-base font-medium">
+                <dd className="text-base font-medium text-gray-700 dark:text-gray-300">
                   {selectedExperience.time ?? '-'}
                 </dd>
               </div>
@@ -160,9 +160,12 @@ export default function WorkExperience({
               <h5 className="mb-3 text-xl font-semibold text-primary">
                 What I did
               </h5>
-              <ul className="ml-4 space-y-3 list-disc marker:text-primary">
+              <ul className="ml-4 space-y-2 list-disc marker:text-primary">
                 {selectedExperience.contents.map((content) => (
-                  <li key={content} className="pl-2 text-base text-gray-400">
+                  <li
+                    key={content}
+                    className="pl-2 text-base text-neutral-500 dark:text-gray-400"
+                  >
                     {content}
                   </li>
                 ))}

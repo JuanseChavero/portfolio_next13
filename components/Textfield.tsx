@@ -9,7 +9,7 @@ interface FormGroupProps extends FieldProps {
 }
 
 const fieldStyle =
-  'text-md w-full rounded-md bg-gray-300 p-3 text-white placeholder-gray-400 outline-none outline-[3px] focus:outline focus:outline-offset-4 focus:outline-primary dark:bg-neutral-100 dark:text-black dark:placeholder-slate-400';
+  'text-md w-full rounded-md bg-gray-200 hover:brightness-[1.05] dark:hover:brightness-[0.9] p-3 text-white placeholder-gray-400 outline-none outline-[3px] focus:outline focus:outline-offset-4 focus:outline-primary dark:bg-neutral-100 dark:text-black dark:placeholder-slate-400';
 
 function FormGroup({ label, children }: FormGroupProps) {
   return (

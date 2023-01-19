@@ -39,18 +39,25 @@ body::-webkit-scrollbar-corner {
 }
 
 html main {
-  background-image: radial-gradient(rgb(0, 0, 0, 0.2) 1px, transparent 0);
+  background-image: radial-gradient(rgb(0, 0, 0, 0.1) 1px, transparent 0);
   background-size: 40px 40px;
-  background-repeat: space;
+  background-repeat: repeat;
+  background-attachment: fixed;
 }
 
 html.dark main {
-  background-image: radial-gradient(
-    rgb(255, 255, 255, 0.15) 1px,
-    transparent 0
-  );
+  background-image: radial-gradient(rgb(255, 255, 255, 0.1) 1px, transparent 0);
+}
+
+.dots-grid {
+  background-image: radial-gradient(rgb(0, 0, 0, 0.2) 1px, transparent 0);
   background-size: 40px 40px;
-  background-repeat: space;
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
+html.dark .dots-grid {
+  background-image: radial-gradient(rgb(255, 255, 255, 0.1) 1px, transparent 0);
 }
 
 a {
