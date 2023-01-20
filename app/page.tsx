@@ -46,47 +46,46 @@ export default function Home() {
 
   return (
     <PageWrapper>
-      <motion.div className="container flex flex-col items-center max-w-5xl">
-        <motion.div
-          className="tracking-wider"
-          variants={container}
-          initial="hidden"
-          animate="show"
-        >
+      <motion.div
+        className="container flex max-w-5xl flex-col tracking-wider"
+        variants={container}
+        initial="hidden"
+        animate="show"
+      >
+        <div>
           <motion.span className="text-2xl text-gray-400" variants={item}>
             Hello there!
           </motion.span>{' '}
           <motion.span className="text-2xl text-gray-400" variants={item}>
             My name is
           </motion.span>
-          <motion.h1
-            className="group relative mt-2 mb-4 font-header text-7xl font-bold text-primary transition-[letter-spacing] duration-700 hover:tracking-widest"
-            variants={nameVariant}
-          >
-            {name}
-          </motion.h1>
-          <motion.h2
-            className="mb-5 text-5xl tracking-tight text-slate-400 drop-shadow-md"
-            variants={item}
-          >
-            {profession}
-          </motion.h2>
-          <motion.div className="max-w-3xl" variants={item}>
-            <p className="text-2xl">
-              I&apos;m a Full-stack developer skilled in creating user-centered
-              software, with a focus on elegant front-end design.
-            </p>
-          </motion.div>
-          <br />
-          <motion.p className="text-2xl text-gray-400" variants={item}>
-            Let&apos;s create something great together!
-          </motion.p>
-          <motion.div
-            className="flex flex-col items-end justify-end w-full mt-6"
-            variants={item}
-          >
-            <NextArrow content="Learn more" href="/about" />
-          </motion.div>
+        </div>
+        <motion.h1
+          className="group relative mt-2 mb-4 font-header text-7xl font-bold text-primary transition-[letter-spacing] duration-700 hover:tracking-widest"
+          variants={nameVariant}
+        >
+          {name}
+        </motion.h1>
+        <motion.h2
+          className="mb-5 text-5xl tracking-tight text-slate-400 drop-shadow-md"
+          variants={item}
+        >
+          {profession}
+        </motion.h2>
+        <motion.div className="max-w-3xl" variants={item}>
+          <p className="text-2xl">
+            I&apos;m a Full-stack developer skilled in creating user-centered
+            software, with a focus on elegant front-end design.
+          </p>
+        </motion.div>
+        <motion.p className="mt-4 text-2xl text-gray-400" variants={item}>
+          Let&apos;s create something great together!
+        </motion.p>
+        <motion.div
+          className="mt-6 flex w-full flex-col items-end justify-end"
+          variants={item}
+        >
+          <NextArrow content="Learn more" href="/about" />
         </motion.div>
       </motion.div>
     </PageWrapper>
