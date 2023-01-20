@@ -1,16 +1,11 @@
 'use client';
 
-import { ArrowRightIcon, ChevronRightIcon } from '@heroicons/react/20/solid';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 import NextArrow from '../components/NextArrow';
 import PageWrapper from '../components/PageWrapper';
-import Tooltip from '../components/Tooltip';
 
 export default function Home() {
   const name = 'Juan Segundo Chavero.';
-  // const profession ='Crafting pixel-perfect websites, one line of code at a time.';
-
   const profession =
     'Crafting elegant solutions for complex problems, one line of code at a time.';
 
@@ -35,7 +30,6 @@ export default function Home() {
       opacity: 1,
       x: 0,
       transition: {
-        delay: 1,
         x: {
           type: 'spring',
           bounce: 0,
@@ -61,24 +55,27 @@ export default function Home() {
           </motion.span>
         </div>
         <motion.h1
-          className="group relative mt-2 mb-4 font-header text-7xl font-bold text-primary transition-[letter-spacing] duration-700 hover:tracking-widest"
+          className="mt-2 mb-4 break-normal font-header text-6xl font-bold text-primary transition-[letter-spacing] duration-700 hover:tracking-widest sm:text-7xl"
           variants={nameVariant}
         >
           {name}
         </motion.h1>
         <motion.h2
-          className="mb-5 text-5xl tracking-tight text-slate-400 drop-shadow-md"
+          className="mb-5 text-3xl tracking-tight text-slate-400 drop-shadow-md sm:text-5xl"
           variants={item}
         >
           {profession}
         </motion.h2>
         <motion.div className="max-w-3xl" variants={item}>
-          <p className="text-2xl">
+          <p className="text-xl sm:text-2xl">
             I&apos;m a Full-stack developer skilled in creating user-centered
             software, with a focus on elegant front-end design.
           </p>
         </motion.div>
-        <motion.p className="mt-4 text-2xl text-gray-400" variants={item}>
+        <motion.p
+          className="mt-4 text-xl text-gray-400 sm:text-2xl"
+          variants={item}
+        >
           Let&apos;s create something great together!
         </motion.p>
         <motion.div

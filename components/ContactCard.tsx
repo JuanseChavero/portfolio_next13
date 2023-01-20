@@ -1,13 +1,6 @@
 import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
-import {
-  FaEnvelope,
-  FaEnvelopeOpen,
-  FaEnvelopeSquare,
-  FaLinkedin,
-  FaMailBulk,
-  FaMailchimp,
-} from 'react-icons/fa';
+import { FaEnvelope, FaLinkedin } from 'react-icons/fa';
 
 interface Contact {
   icon: ReactNode;

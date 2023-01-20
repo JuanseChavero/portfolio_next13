@@ -1,13 +1,11 @@
 'use client';
 
 import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
-import { useDeferredValue, useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
+import { useSidebar } from '../contexts/sidebarContext';
 import Link from 'next/link';
 import Logo from './Logo';
 import ThemeSwitch from './ThemeSwitch';
-import { useSidebar } from '../contexts/sidebarContext';
-import { useClickOutside } from '../hooks/useClickOutside';
 import Sidebar from './Sidebar';
 
 interface NavItemProps {
@@ -42,7 +40,7 @@ export function NavItem({ title, to }: NavItemProps) {
             <motion.div
               key={to}
               layoutId="background"
-              className="absolute top-0 left-0 w-full h-full -z-10"
+              className="absolute top-0 left-0 -z-10 h-full w-full"
               initial={false}
               animate={{ backgroundColor: '#fb7e14' }}
               transition={{ type: 'tween', duration: 0.5 }}
@@ -55,68 +53,11 @@ export function NavItem({ title, to }: NavItemProps) {
 }
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [mounted, setIsMounted] = useState(false);
-  const [dimensions, setDimensions] = useState({ width: 0 });
-  const debouncedDimensions = useDeferredValue(dimensions.width);
-
-  const sidebarRef = useRef(null);
-  const { isOpen, toggle, open, close } = useSidebar();
-
-  const shouldCloseSidebar = dimensions.width < 785;
-
-  useEffect(() => {
-    function handleResize() {
-      setDimensions({
-        width: window.innerWidth,
-      });
-    }
-
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [debouncedDimensions]);
-
-  useEffect(() => {
-    close();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [shouldCloseSidebar]);
-
-  useClickOutside(sidebarRef, () => close());
-
-  useEffect(() => {
-    setIsMounted(true);
-    toggleVisible();
-  }, []);
-
-  const toggleVisible = () => {
-    const scrolled = document.documentElement.scrollTop;
-
-    if (scrolled > 300) {
-      setIsScrolled(true);
-    } else if (scrolled <= 300) {
-      setIsScrolled(false);
-    }
-  };
-
-  const onClickModal = () => {
-    if (isOpen) {
-      close();
-    } else {
-      open();
-    }
-  };
-
-  if (mounted) {
-    window.addEventListener('scroll', toggleVisible);
-  }
+  const { isOpen } = useSidebar();
 
   return (
     <motion.header
-      className={`z-30 flex w-full justify-center px-6 xl:px-10 ${
-        isScrolled ? '' : 'py-8'
-      }`}
+      className={`z-30 flex w-full justify-center px-6 py-9 xl:px-10`}
       initial="hidden"
       animate="visible"
       transition={{ duration: 1.5, ease: 'anticipate' }}
@@ -129,8 +70,9 @@ export default function Navbar() {
         className={`flex w-full items-center justify-between gap-2 sm:gap-5`}
       >
         <Logo />
-        <hr className="h-[2px] w-full rounded-full border-none bg-primary" />
 
+        {/* Desktop */}
+        <hr className="h-[2px] w-full rounded-full border-none bg-primary" />
         <ul className="hidden items-center divide-x-[0.5rem] divide-white dark:divide-black lg:flex">
           <LayoutGroup>
             {routes.map((route) => (
@@ -141,16 +83,15 @@ export default function Navbar() {
           </LayoutGroup>
         </ul>
         <hr className="hidden h-[2px] w-full rounded-full border-none bg-primary lg:inline" />
-
         <div className="hidden lg:flex">
           <ThemeSwitch />
         </div>
 
+        {/* Mobile */}
         <motion.div
-          className="z-[100] flex gap-3 self-center justify-self-center lg:hidden"
+          className="flex gap-3 self-center justify-self-center lg:hidden"
           initial={false}
           animate={isOpen ? 'open' : 'closed'}
-          ref={sidebarRef}
         >
           <ThemeSwitch />
           <Sidebar />

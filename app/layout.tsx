@@ -1,9 +1,9 @@
 'use client';
 
 import './globals.css';
+import { useEffect, useState } from 'react';
 import { Exo, Exo_2 } from '@next/font/google';
 import Providers from './providers';
-import { useEffect, useState } from 'react';
 import Layout from './customLayout';
 
 const font = Exo_2({
@@ -32,6 +32,7 @@ export default function RootLayout({
 
   if (!mounted) {
     return (
+      // Until rendering the actual layout, display a black screen
       <html className="bg-black">
         <head />
         <body></body>

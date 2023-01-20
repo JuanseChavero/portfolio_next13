@@ -1,28 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ReactNode } from 'react';
 import NextArrow from '../../components/NextArrow';
 import PageWrapper from '../../components/PageWrapper';
 import Heading from '../../components/Heading';
 import SkillCard, { skills } from '../../components/SkillCard';
 import { containerVariant, itemVariant } from '../../utils/motion';
-
-interface SkillSectionProps {
-  title: string;
-  children: ReactNode;
-}
-
-const SkillSection = ({ title, children }: SkillSectionProps) => {
-  return (
-    <div className="flex flex-1 flex-col items-center justify-center rounded border p-6 shadow-inner">
-      {/* <div className="my-4 w-full rounded border-l-[6px] bg-primary"> */}
-      <h3 className="text-2xl">{title}</h3>
-      {/* </div> */}
-      <div className="flex flex-wrap items-center gap-2">{children}</div>
-    </div>
-  );
-};
 
 export default function Skills() {
   return (

@@ -1,8 +1,6 @@
 import {
   Drawer,
   DrawerBody,
-  DrawerFooter,
-  DrawerHeader,
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
@@ -28,7 +26,7 @@ const SidebarButton = ({ isOpen }: { isOpen: boolean }) => {
   return (
     <svg
       viewBox="0 0 20 20"
-      className="flex flex-col items-center justify-center w-full h-full"
+      className="flex h-full w-full flex-col items-center justify-center"
     >
       <Path
         variants={{
@@ -78,7 +76,7 @@ export default function Sidebar() {
       <motion.button
         ref={btnRef}
         onClick={onClickModal}
-        className="w-12 h-12 p-2 border-2 rounded border-primary"
+        className="h-12 w-12 rounded border-2 border-primary p-2"
       >
         <SidebarButton isOpen={isOpen} />
       </motion.button>
@@ -91,7 +89,11 @@ export default function Sidebar() {
         <DrawerOverlay />
         <DrawerContent style={{ background: '#fb7e14' }}>
           <DrawerCloseButton
-            style={{ marginTop: 30, marginRight: 20, fontSize: 15 }}
+            style={{
+              marginTop: 30,
+              marginRight: 20,
+              fontSize: 15,
+            }}
           />
           <DrawerBody
             style={{
@@ -104,14 +106,12 @@ export default function Sidebar() {
           >
             <ul className="flex flex-col gap-4">
               {routes.map((route) => (
-                <li key={route.title}>
+                <li key={route.title} onClick={close}>
                   <NavItem {...route} />
                 </li>
               ))}
             </ul>
           </DrawerBody>
-
-          <DrawerFooter></DrawerFooter>
         </DrawerContent>
       </Drawer>
     </ChakraProvider>
