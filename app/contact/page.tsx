@@ -152,6 +152,7 @@ export default function Contact() {
                   />
                   <motion.button
                     type="button"
+                    aria-label="Submit form"
                     onClick={onSubmit}
                     className={`flex h-12 w-full items-center justify-center rounded border-2 border-primary text-center text-lg font-bold uppercase tracking-widest text-primary outline-2 outline-offset-8 outline-primary transition-[background-color,outline-offset,color] hocus:bg-primary hocus:text-black hocus:outline hocus:outline-offset-4 dark:hocus:text-white ${
                       isSending ? 'cursor-default' : 'cursor-pointer'

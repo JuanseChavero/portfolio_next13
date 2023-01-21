@@ -26,7 +26,7 @@ export function NavItem({ title, to }: NavItemProps) {
   const isActive = pathname === to;
 
   return (
-    <Link href={to} className="outline-none" tabIndex={-1}>
+    <Link href={to} className="outline-none" title={title} tabIndex={-1}>
       {' '}
       <motion.div
         tabIndex={0}

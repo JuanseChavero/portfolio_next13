@@ -76,6 +76,7 @@ export default function Sidebar() {
       <motion.button
         ref={btnRef}
         onClick={onClickModal}
+        aria-label="Sidebar toggler"
         className="h-12 w-12 rounded border-2 border-primary p-2"
       >
         <SidebarButton isOpen={isOpen} />

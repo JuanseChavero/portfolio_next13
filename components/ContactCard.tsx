@@ -42,6 +42,7 @@ export default function ContactCard(wayToContact: Contact) {
           href={wayToContact.href}
           rel="noreferrer"
           className="mt-2 font-header text-secondary"
+          aria-label={`Link to my ${wayToContact.title}`}
         >
           {wayToContact.linkContent}
         </a>

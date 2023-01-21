@@ -46,6 +46,7 @@ export default function ThemeSwitch() {
       initial="rest"
       whileTap="tap"
       animate="rest"
+      aria-label="Color theme toggler"
     >
       <motion.div variants={item} className="h-6 w-6">
         {!currentThemeIsDark ? (

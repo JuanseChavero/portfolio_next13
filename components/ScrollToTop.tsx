@@ -48,6 +48,7 @@ export default function ScrollToTop() {
             <button
               className="h-16 w-16 rounded-full bg-slate-800 p-4 dark:bg-slate-100"
               type="button"
+              aria-label="Scroll to top"
               onClick={scrollToTop}
             >
               <ArrowUpIcon className="text-white dark:text-black" />

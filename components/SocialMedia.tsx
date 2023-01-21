@@ -51,6 +51,7 @@ export function SocialMediaIcon({
         target="_blank"
         rel="noreferrer"
         tabIndex={-1}
+        aria-label={`Link to my ${title}`}
         className={`pointer-events-auto cursor-pointer outline-none`}
         whileHover={{ scale: 1.3 }}
         whileFocus={{ scale: 1.3 }}
@@ -64,7 +65,7 @@ export function SocialMediaIcon({
 export default function SocialMedia() {
   return (
     <motion.div
-      className="fixed flex-col items-center justify-center hidden h-screen gap-6 left-8 md:flex xl:left-12"
+      className="fixed left-8 hidden h-screen flex-col items-center justify-center gap-6 md:flex xl:left-12"
       initial={{ opacity: 0, y: 400 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 400 }}

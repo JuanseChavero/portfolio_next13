@@ -31,6 +31,7 @@ export default function Projects() {
               href="https://github.com/JuanseChavero/FullstackOpen-2022-part7/tree/main/bloglist"
               target="_blank"
               rel="noreferrer"
+              aria-label="Link to Fullstack Blog App repository"
             >
               Fullstack Blog App
             </a>
@@ -41,6 +42,7 @@ export default function Projects() {
               href="https://github.com/JuanseChavero"
               target="_blank"
               rel="noreferrer"
+              aria-label="Link to my github repository"
             >
               <Tooltip content="See more projects" side="left">
                 <div>

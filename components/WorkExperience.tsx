@@ -111,6 +111,7 @@ export default function WorkExperience({
                     href={selectedExperience.companySite}
                     target="_blank"
                     rel="noreferrer"
+                    aria-label={`Link to ${selectedExperience.company} website`}
                     className="flex items-start font-header hover:text-black dark:hover:text-white"
                   >
                     {selectedExperience.company}

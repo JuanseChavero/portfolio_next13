@@ -103,17 +103,22 @@ export default function Project({
           className="group relative z-10 h-full w-[60%] overflow-hidden rounded-lg shadow-md"
           variants={imageVariant}
         >
-          <a href={siteUrl} target="_blank" rel="noreferrer">
+          <a
+            href={siteUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`Link to ${name} website`}
+          >
             <Image
               width={0}
               height={0}
               alt={`${name} screenshot`}
-              className="object-cover w-full h-full"
+              className="h-full w-full object-cover"
               src={image}
               unoptimized
               priority
             />
-            <div className="absolute inset-0 w-full h-full transition-all bg-primary/30 group-hover:hidden" />
+            <div className="absolute inset-0 h-full w-full bg-primary/30 transition-all group-hover:hidden" />
           </a>
         </motion.div>
 
@@ -136,8 +141,9 @@ export default function Project({
               target="_blank"
               rel="noreferrer"
               className="group"
+              aria-label={`Link to ${name} website`}
             >
-              <h5 className="text-2xl font-bold text-start text-primary group-hover:text-black dark:group-hover:text-white">
+              <h5 className="text-start text-2xl font-bold text-primary group-hover:text-black dark:group-hover:text-white">
                 {name}
               </h5>
             </a>
@@ -154,7 +160,7 @@ export default function Project({
           </motion.div>
 
           {/* Footer */}
-          <div className="flex flex-col w-full gap-4">
+          <div className="flex w-full flex-col gap-4">
             <motion.div
               variants={itemVariant}
               className={`pointer-events-auto flex ${
@@ -194,6 +200,7 @@ export default function Project({
                   target="_blank"
                   rel="noreferrer"
                   className="group"
+                  aria-label={`Link to ${name} website`}
                 >
                   <FiExternalLink className="h-7 w-7 group-hover:stroke-primary" />
                 </a>
@@ -211,13 +218,18 @@ export default function Project({
         <div className="flex flex-col gap-2">
           <div className="flex flex-col items-start">
             <span className="text-sm text-gray-500">Project</span>
-            <a href={siteUrl} target="_blank" rel="noreferrer">
+            <a
+              href={siteUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`Link to ${name} website`}
+            >
               <h5 className="text-2xl font-semibold text-primary">{name}</h5>
             </a>
           </div>
           <div className="text-gray-900 dark:text-gray-300">{description}</div>
           {/* Footer */}
-          <div className="flex flex-col w-full gap-4 mt-4">
+          <div className="mt-4 flex w-full flex-col gap-4">
             <div className={`pointer-events-auto`}>
               <ul className="flex flex-wrap gap-3">
                 {technologiesUsed.map((technology) => (
@@ -237,6 +249,7 @@ export default function Project({
                   target="_blank"
                   rel="noreferrer"
                   className="group"
+                  aria-label={`Link to ${name} website`}
                 >
                   <SiGithub className="h-7 w-7 group-hover:fill-primary" />
                 </a>
@@ -247,6 +260,7 @@ export default function Project({
                   target="_blank"
                   rel="noreferrer"
                   className="group"
+                  aria-label={`Link to ${name} website`}
                 >
                   <FiExternalLink className="h-7 w-7 group-hover:stroke-primary" />
                 </a>
