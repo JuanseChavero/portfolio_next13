@@ -1,14 +1,16 @@
 import Image from 'next/image';
+import type { StaticImageData } from 'next/image';
 import { ReactNode } from 'react';
 import { FiExternalLink } from 'react-icons/fi';
 import { SiGithub } from 'react-icons/si';
-import Tooltip from './Tooltip';
 import { Variants, motion } from 'framer-motion';
+import Tooltip from './Tooltip';
+import paintShop from '../public/paint-shop.png';
 
 interface ProjectProps {
   name: string;
   description: ReactNode;
-  image: string;
+  image: string | StaticImageData;
   imageAlignment: 'left' | 'right';
   siteUrl: string;
   githubUrl: string;
@@ -42,7 +44,7 @@ export const projects: ProjectProps[] = [
         shop.
       </p>
     ),
-    image: '/paint-shop.png',
+    image: paintShop,
     imageAlignment: 'right',
     siteUrl: 'https://pintureria-arcobaleno.netlify.app',
     githubUrl: 'https://github.com/JuanseChavero/pintureria_arcobaleno-web',
@@ -110,15 +112,12 @@ export default function Project({
             aria-label={`Link to ${name} website`}
           >
             <Image
-              width={0}
-              height={0}
               alt={`${name} screenshot`}
-              className="h-full w-full object-cover"
+              className="object-contain"
               src={image}
-              unoptimized
               priority
             />
-            <div className="absolute inset-0 h-full w-full bg-primary/30 transition-all group-hover:hidden" />
+            <div className="absolute inset-0 w-full h-full transition-all bg-primary/30 group-hover:hidden" />
           </a>
         </motion.div>
 
@@ -143,7 +142,7 @@ export default function Project({
               className="group"
               aria-label={`Link to ${name} website`}
             >
-              <h3 className="text-start text-2xl font-bold text-primary group-hover:text-black dark:group-hover:text-white">
+              <h3 className="text-2xl font-bold text-start text-primary group-hover:text-black dark:group-hover:text-white">
                 {name}
               </h3>
             </a>
@@ -164,7 +163,7 @@ export default function Project({
           </motion.div>
 
           {/* Footer */}
-          <div className="flex w-full flex-col gap-4">
+          <div className="flex flex-col w-full gap-4">
             <motion.div
               variants={itemVariant}
               className={`pointer-events-auto flex ${
@@ -218,7 +217,7 @@ export default function Project({
       {/* Mobile */}
       <motion.div
         variants={imageVariant}
-        className={`relative block h-max w-full rounded border-2 border-primary bg-neutral-100 p-6 shadow-md dark:bg-neutral-900 lg:hidden`}
+        className={`relative block h-max w-full rounded border-2 border-primary bg-gray-200 p-6 shadow-md dark:bg-neutral-900 lg:hidden`}
       >
         <div className="flex flex-col gap-2">
           <div className="flex flex-col items-start">
@@ -234,7 +233,7 @@ export default function Project({
           </div>
           <div className="text-gray-900 dark:text-gray-300">{description}</div>
           {/* Footer */}
-          <div className="mt-4 flex w-full flex-col gap-4">
+          <div className="flex flex-col w-full gap-4 mt-4">
             <div className={`pointer-events-auto`}>
               <ul className="flex flex-wrap gap-3">
                 {technologiesUsed.map((technology) => (
