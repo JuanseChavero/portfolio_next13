@@ -1,6 +1,7 @@
 'use client';
 
-import { ReactNode, useEffect } from 'react';
+import { ReactNode } from 'react';
+import Email from '../components/Email';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import ScrollToTop from '../components/ScrollToTop';
@@ -19,6 +20,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       <Navbar />
       {children}
       <SocialMedia />
+      <Email />
       <Footer />
     </main>
   );
