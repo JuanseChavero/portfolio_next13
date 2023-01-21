@@ -169,7 +169,9 @@ export default function Contact() {
                   className="mb-6 flex flex-col"
                   variants={contactCardVariant}
                 >
-                  <h5 className="mb-2 text-base">You can also find me at:</h5>
+                  <span className="mb-2 text-base">
+                    You can also find me at:
+                  </span>
                   <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1">
                     {waysOfContact.map((wayToContact) => (
                       <ContactCard key={wayToContact.title} {...wayToContact} />

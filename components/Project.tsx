@@ -143,20 +143,24 @@ export default function Project({
               className="group"
               aria-label={`Link to ${name} website`}
             >
-              <h5 className="text-start text-2xl font-bold text-primary group-hover:text-black dark:group-hover:text-white">
+              <h3 className="text-start text-2xl font-bold text-primary group-hover:text-black dark:group-hover:text-white">
                 {name}
-              </h5>
+              </h3>
             </a>
           </motion.div>
 
           {/* Description */}
           <motion.div
             variants={descriptionVariant}
-            className={`pointer-events-auto flex h-min flex-col gap-2 rounded bg-secondary px-6 py-4 text-white shadow-lg`}
+            className={`pointer-events-auto flex h-min flex-col gap-2 rounded bg-secondary px-6 py-4 shadow-lg`}
           >
-            <div className={alignmentIsLeft ? 'text-end' : 'text-start'}>
+            <span
+              className={`${
+                alignmentIsLeft ? 'text-end' : 'text-start'
+              } font-semibold text-white`}
+            >
               {description}
-            </div>
+            </span>
           </motion.div>
 
           {/* Footer */}
@@ -190,6 +194,7 @@ export default function Project({
                   target="_blank"
                   rel="noreferrer"
                   className="group"
+                  aria-label={`Link to ${name} repository`}
                 >
                   <SiGithub className="h-7 w-7 group-hover:fill-primary" />
                 </a>
@@ -224,7 +229,7 @@ export default function Project({
               rel="noreferrer"
               aria-label={`Link to ${name} website`}
             >
-              <h5 className="text-2xl font-semibold text-primary">{name}</h5>
+              <h3 className="text-2xl font-semibold text-primary">{name}</h3>
             </a>
           </div>
           <div className="text-gray-900 dark:text-gray-300">{description}</div>
@@ -249,7 +254,7 @@ export default function Project({
                   target="_blank"
                   rel="noreferrer"
                   className="group"
-                  aria-label={`Link to ${name} website`}
+                  aria-label={`Link to ${name} repository`}
                 >
                   <SiGithub className="h-7 w-7 group-hover:fill-primary" />
                 </a>
