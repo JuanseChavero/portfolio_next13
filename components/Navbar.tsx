@@ -40,7 +40,7 @@ export function NavItem({ title, to }: NavItemProps) {
             <motion.div
               key={to}
               layoutId="background"
-              className="absolute top-0 left-0 -z-10 h-full w-full"
+              className="absolute top-0 left-0 w-full h-full -z-10"
               initial={false}
               animate={{ backgroundColor: '#fb7e14' }}
               transition={{ type: 'tween', duration: 0.5 }}
@@ -55,12 +55,19 @@ export function NavItem({ title, to }: NavItemProps) {
 export default function Navbar() {
   const { isOpen } = useSidebar();
 
+  const hrVariant = {
+    from: 0,
+    delay: 0.3,
+    duration: 3,
+    type: 'tween',
+    ease: 'easeInOut',
+  };
   return (
     <motion.header
       className={`z-30 flex w-full justify-center px-6 py-9 xl:px-10`}
       initial="hidden"
       animate="visible"
-      transition={{ duration: 1.5, ease: 'anticipate' }}
+      transition={{ duration: 1.5, ease: 'easeInOut' }}
       variants={{
         hidden: { opacity: 0, translateY: '-100%' },
         visible: { opacity: 1, translateY: 0 },
@@ -72,8 +79,12 @@ export default function Navbar() {
         <Logo />
 
         {/* Desktop */}
-        <hr className="h-[2px] w-full rounded-full border-none bg-primary" />
-        <ul className="hidden items-center divide-x-[0.5rem] divide-white dark:divide-black lg:flex">
+        <motion.hr
+          className="ml-auto h-[2px] rounded-full border-none bg-primary text-end"
+          whileInView={{ width: '100%' }}
+          transition={hrVariant}
+        />
+        <motion.ul className="hidden items-center divide-x-[0.5rem] divide-white dark:divide-black lg:flex">
           <LayoutGroup>
             {routes.map((route) => (
               <li key={route.to}>
@@ -81,15 +92,19 @@ export default function Navbar() {
               </li>
             ))}
           </LayoutGroup>
-        </ul>
-        <hr className="hidden h-[2px] w-full rounded-full border-none bg-primary lg:inline" />
+        </motion.ul>
+        <motion.hr
+          className="mr-auto hidden h-[2px] rounded-full border-none bg-primary text-end lg:inline"
+          whileInView={{ width: '100%' }}
+          transition={hrVariant}
+        />
         <div className="hidden lg:flex">
           <ThemeSwitch />
         </div>
 
         {/* Mobile */}
         <motion.div
-          className="flex gap-3 self-center justify-self-center lg:hidden"
+          className="flex self-center gap-3 justify-self-center lg:hidden"
           initial={false}
           animate={isOpen ? 'open' : 'closed'}
         >
