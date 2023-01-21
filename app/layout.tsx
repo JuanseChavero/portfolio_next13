@@ -33,7 +33,7 @@ export default function RootLayout({
   if (!mounted) {
     return (
       // Until rendering the actual layout, display a black screen
-      <html className="bg-black">
+      <html lang="en" className="bg-black">
         <head />
         <body></body>
       </html>
@@ -41,7 +41,7 @@ export default function RootLayout({
   }
 
   return (
-    <html className={font.variable} suppressHydrationWarning>
+    <html lang="en" className={font.variable} suppressHydrationWarning>
       <head />
       <body className={headerFont.variable}>
         <Providers>
