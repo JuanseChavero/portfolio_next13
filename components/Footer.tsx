@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { socialMedia, SocialMediaIcon } from './SocialMedia';
+import { SocialMediaIcon } from './SocialMedia';
+import { socialMedia } from '../data/socialMedia';
 
 export default function Footer() {
   return (

@@ -1,37 +1,11 @@
 import { motion } from 'framer-motion';
-import { ReactNode } from 'react';
-import { FaEnvelope, FaLinkedin } from 'react-icons/fa';
-
-interface Contact {
-  icon: ReactNode;
-  title: string;
-  content: string;
-  href: string;
-  linkContent: string;
-}
-
-export const waysOfContact: Contact[] = [
-  {
-    icon: <FaLinkedin className="h-8 w-8" />,
-    title: 'Linkedin',
-    content: 'Juan Segundo Chavero',
-    href: 'https://www.linkedin.com/in/juan-segundo-chavero/',
-    linkContent: 'Chat with me',
-  },
-  {
-    icon: <FaEnvelope className="h-8 w-8" />,
-    title: 'Email',
-    content: 'juansechavero@gmail.com',
-    href: 'mailto:juansechavero@gmail.com',
-    linkContent: 'Send me a message',
-  },
-];
+import { Contact } from '../data/contact';
 
 export default function ContactCard(wayToContact: Contact) {
   return (
-    <motion.div className="group relative h-40 flex-1 rounded border border-primary bg-white px-4 py-5 shadow-md dark:bg-neutral-900">
-      <div className="pointer-events-none absolute inset-0 h-full w-full bg-transparent transition-all group-hover:bg-primary/10" />
-      <div className="relative z-40 flex h-full flex-col items-center justify-center gap-1">
+    <motion.div className="relative flex-1 h-40 px-4 py-5 bg-white border rounded shadow-md group border-primary dark:bg-neutral-900">
+      <div className="absolute inset-0 w-full h-full transition-all bg-transparent pointer-events-none group-hover:bg-primary/10" />
+      <div className="relative z-40 flex flex-col items-center justify-center h-full gap-1">
         {wayToContact.icon}
         <h5 className="text-lg font-semibold">{wayToContact.title}</h5>
         <p className="font-medium tracking-wide text-gray-600 dark:text-gray-400">

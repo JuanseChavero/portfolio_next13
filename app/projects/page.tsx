@@ -5,7 +5,8 @@ import Heading from '../../components/Heading';
 import NextArrow from '../../components/NextArrow';
 import PageWrapper from '../../components/PageWrapper';
 import { containerVariant, itemVariant } from '../../utils/motion';
-import Project, { projects } from '../../components/Project';
+import DisplayProject from '../../components/Project';
+import { projects } from '../../data/projects';
 import { SiGithub } from 'react-icons/si';
 import ShadowButton from '../../components/ShadowButton';
 import Tooltip from '../../components/Tooltip';
@@ -54,7 +55,7 @@ export default function Projects() {
         </motion.div>
         <div className="flex w-full flex-col gap-4 lg:gap-12">
           {projects.map((project) => (
-            <Project key={project.name} {...project} />
+            <DisplayProject key={project.name} {...project} />
           ))}
         </div>
         <motion.div

@@ -1,58 +1,11 @@
 import Image from 'next/image';
-import type { StaticImageData } from 'next/image';
-import { ReactNode } from 'react';
 import { FiExternalLink } from 'react-icons/fi';
 import { SiGithub } from 'react-icons/si';
 import { Variants, motion } from 'framer-motion';
+import { Project } from '../data/projects';
 import Tooltip from './Tooltip';
-import paintShop from '../public/paint-shop.png';
 
-interface ProjectProps {
-  name: string;
-  description: ReactNode;
-  image: string | StaticImageData;
-  imageAlignment: 'left' | 'right';
-  siteUrl: string;
-  githubUrl: string;
-  technologiesUsed: string[];
-}
-
-export const projects: ProjectProps[] = [
-  // {
-  //   name: 'Blog App',
-  //   description: (
-  //     <p>
-  //       A full stack web application built using technologies such as React,
-  //       Node.js, and MongoDB, designed to have a similar functionality to
-  //       Reddit, that began as an exercise of the FullStackOpen course.
-  //     </p>
-  //   ),
-  //   image: '/blog.png',
-  //   imageAlignment: 'left',
-  //   siteUrl: 'https://pintureria-arcobaleno.netlify.app',
-  //   githubUrl:
-  //     'https://github.com/JuanseChavero/FullstackOpen-2022-part7/tree/main/bloglist',
-  //   technologiesUsed: ['React', 'Redux', 'Node.js', 'Express', 'MongoDB'],
-  // },
-  {
-    name: 'Paint Shop App',
-    description: (
-      <p>
-        One of the final projects of my carrer was based on a paint shop in my
-        city. The website project provides an online platform for customers to
-        browse paint products, place orders, and schedule appointments with the
-        shop.
-      </p>
-    ),
-    image: paintShop,
-    imageAlignment: 'right',
-    siteUrl: 'https://pintureria-arcobaleno.netlify.app',
-    githubUrl: 'https://github.com/JuanseChavero/pintureria_arcobaleno-web',
-    technologiesUsed: ['React', 'Bootstrap'],
-  },
-];
-
-export default function Project({
+export default function DisplayProject({
   name,
   description,
   image,
@@ -60,7 +13,7 @@ export default function Project({
   siteUrl,
   githubUrl,
   technologiesUsed,
-}: ProjectProps) {
+}: Project) {
   const alignmentIsLeft = imageAlignment === 'left';
 
   const imageVariant: Variants = {

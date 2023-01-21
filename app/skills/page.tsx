@@ -4,7 +4,8 @@ import { motion } from 'framer-motion';
 import NextArrow from '../../components/NextArrow';
 import PageWrapper from '../../components/PageWrapper';
 import Heading from '../../components/Heading';
-import SkillCard, { skills } from '../../components/SkillCard';
+import SkillCard from '../../components/SkillCard';
+import { skills } from '../../data/skills';
 import { containerVariant, itemVariant } from '../../utils/motion';
 
 export default function Skills() {

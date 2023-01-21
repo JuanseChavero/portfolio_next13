@@ -5,7 +5,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowPathIcon, CheckCircleIcon } from '@heroicons/react/20/solid';
 import { TextArea, Textfield } from '../../components/Textfield';
 import { containerVariant, itemVariant } from '../../utils/motion';
-import ContactCard, { waysOfContact } from '../../components/ContactCard';
+import { waysOfContact } from '../../data/contact';
+import ContactCard from '../../components/ContactCard';
 import PageWrapper from '../../components/PageWrapper';
 import Heading from '../../components/Heading';
 import emailjs from '@emailjs/browser';
@@ -76,14 +77,14 @@ export default function Contact() {
   return (
     <PageWrapper>
       <motion.div
-        className="container flex max-w-5xl flex-col"
+        className="container flex flex-col max-w-5xl"
         variants={containerVariant}
         initial="hidden"
         animate="visible"
       >
         <Heading title="Contact" variants={itemVariant} />
         <motion.div
-          className="mb-6 text-left text-xl lg:text-justify"
+          className="mb-6 text-xl text-left lg:text-justify"
           variants={itemVariant}
         >
           <p>
@@ -107,17 +108,17 @@ export default function Contact() {
                   animate={{ scale: 1 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <CheckCircleIcon className="h-24 w-24 fill-green-500" />
+                  <CheckCircleIcon className="w-24 h-24 fill-green-500" />
                 </motion.div>
                 <div className="max-w-sm">
-                  <p className="mt-4 text-center text-lg text-green-500">
+                  <p className="mt-4 text-lg text-center text-green-500">
                     Thank you for reaching out.
                   </p>
-                  <p className="mt-4 text-center text-lg text-green-500">
+                  <p className="mt-4 text-lg text-center text-green-500">
                     I have received your message and will get back to you as
                     soon as possible.
                   </p>
-                  <p className="mt-4 text-center text-lg text-green-500">
+                  <p className="mt-4 text-lg text-center text-green-500">
                     I appreciate your interest and look forward to discussing
                     your project with you!
                   </p>
@@ -130,7 +131,7 @@ export default function Contact() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="flex w-full flex-1 flex-col gap-5"
+                  className="flex flex-col flex-1 w-full gap-5"
                 >
                   <Textfield
                     name="user_name"
@@ -159,14 +160,14 @@ export default function Contact() {
                     }`}
                   >
                     {isSending ? (
-                      <ArrowPathIcon className="h-8 w-8 animate-spin" />
+                      <ArrowPathIcon className="w-8 h-8 animate-spin" />
                     ) : (
                       'Submit'
                     )}
                   </motion.button>
                 </motion.div>
                 <motion.div
-                  className="mb-6 flex flex-col"
+                  className="flex flex-col mb-6"
                   variants={contactCardVariant}
                 >
                   <span className="mb-2 text-base">
