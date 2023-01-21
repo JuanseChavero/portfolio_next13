@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedinIn, FaPortrait } from 'react-icons/fa';
 import Tooltip from './Tooltip';
 
 const socialMediaButtonStyle =
-  'h-7 w-7 fill-gray-500 dark:fill-white transition-colors hocus:fill-primary dark:hocus:fill-primary outline-none';
+  'h-7 w-7 fill-gray-500 dark:fill-gray-400 transition-colors hocus:fill-primary dark:hocus:fill-primary outline-none';
 
 export const socialMedia = [
   {
@@ -46,18 +46,16 @@ export function SocialMediaIcon({
       className="uppercase"
       sideOffset={sideOffset}
     >
-      <motion.a
+      <a
         href={href}
         target="_blank"
         rel="noreferrer"
         tabIndex={-1}
         aria-label={`Link to my ${title}`}
         className={`pointer-events-auto cursor-pointer outline-none`}
-        whileHover={{ scale: 1.3 }}
-        whileFocus={{ scale: 1.3 }}
       >
         {icon}
-      </motion.a>
+      </a>
     </Tooltip>
   );
 }
@@ -65,7 +63,7 @@ export function SocialMediaIcon({
 export default function SocialMedia() {
   return (
     <motion.div
-      className="fixed left-8 hidden h-screen flex-col items-center justify-center gap-6 md:flex xl:left-12"
+      className="fixed flex-col items-center justify-center hidden h-screen gap-6 left-8 md:flex xl:left-12"
       initial={{ opacity: 0, y: 400 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 400 }}
@@ -76,9 +74,13 @@ export default function SocialMedia() {
       <motion.div className="h-full" />
       <motion.ul className="flex flex-col gap-6">
         {socialMedia.map((media) => (
-          <li key={media.title}>
+          <motion.li
+            key={media.title}
+            whileHover={{ scale: 1.3 }}
+            whileFocus={{ scale: 1.3 }}
+          >
             <SocialMediaIcon {...media} />
-          </li>
+          </motion.li>
         ))}
       </motion.ul>
       <motion.div className="h-40 w-[2px] rounded-full bg-primary" />

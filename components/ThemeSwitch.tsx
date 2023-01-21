@@ -12,7 +12,7 @@ export default function ThemeSwitch() {
   }, []);
 
   if (!mounted) {
-    return <div className="h-6 w-6 rounded border-2 border-primary"></div>;
+    return <div className="w-6 h-6 border-2 rounded border-primary"></div>;
   }
 
   const currentTheme = theme === 'system' ? systemTheme : theme;
@@ -39,7 +39,7 @@ export default function ThemeSwitch() {
 
   return (
     <motion.button
-      className="flex cursor-pointer items-center justify-center rounded border-2 border-primary p-2 outline-none hover:bg-primary/20 focus-visible:border-black dark:focus-visible:border-white"
+      className="flex items-center justify-center p-2 border-2 rounded outline-none cursor-pointer border-primary hover:bg-primary/20 focus-visible:border-black dark:focus-visible:border-white"
       data-is-darkmode={currentThemeIsDark}
       onClick={switchTheme}
       tabIndex={0}
@@ -48,9 +48,9 @@ export default function ThemeSwitch() {
       animate="rest"
       aria-label="Color theme toggler"
     >
-      <motion.div variants={item} className="h-6 w-6">
+      <motion.div variants={item} className="w-6 h-6">
         {!currentThemeIsDark ? (
-          <SunIcon className="fill-yellow-600 stroke-yellow-600 stroke-[0.5px]" />
+          <SunIcon className="fill-primary stroke-primary stroke-[0.5px]" />
         ) : (
           <MoonIcon className="stroke-primary" />
         )}

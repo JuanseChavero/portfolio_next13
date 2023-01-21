@@ -106,7 +106,7 @@ export default function WorkExperience({
                 <span className="text-sm text-gray-500 dark:text-gray-400">
                   Company
                 </span>
-                <h6 className="text-xl font-bold text-primary">
+                <p className="text-xl font-bold text-primary">
                   <motion.a
                     href={selectedExperience.companySite}
                     target="_blank"
@@ -116,7 +116,7 @@ export default function WorkExperience({
                   >
                     {selectedExperience.company}
                   </motion.a>
-                </h6>
+                </p>
               </div>
               <div className="">
                 <span className="text-sm text-gray-500 dark:text-gray-400">

@@ -55,7 +55,7 @@ export default function Home() {
           </motion.span>
         </div>
         <motion.h1
-          className="mt-2 mb-4 break-normal font-header text-6xl font-bold text-primary transition-[letter-spacing] duration-700 hover:tracking-widest sm:text-7xl"
+          className="mt-2 mb-4 break-normal font-header text-5xl font-bold text-primary transition-[letter-spacing,font-size,line-height] duration-700 hover:tracking-widest sm:text-7xl"
           variants={nameVariant}
         >
           {name}
