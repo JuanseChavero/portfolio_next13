@@ -83,6 +83,7 @@ export default function Navbar() {
           className="ml-auto h-[2px] rounded-full border-none bg-primary text-end"
           whileInView={{ width: '100%' }}
           transition={hrVariant}
+          viewport={{ once: true }}
         />
         <motion.ul className="hidden items-center divide-x-[0.5rem] divide-white dark:divide-black lg:flex">
           <LayoutGroup>
@@ -97,6 +98,7 @@ export default function Navbar() {
           className="mr-auto hidden h-[2px] rounded-full border-none bg-primary text-end lg:inline"
           whileInView={{ width: '100%' }}
           transition={hrVariant}
+          viewport={{ once: true }}
         />
         <div className="hidden lg:flex">
           <ThemeSwitch />
