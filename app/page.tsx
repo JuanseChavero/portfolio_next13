@@ -82,7 +82,7 @@ export default function Home() {
           className="mt-6 flex w-full flex-col items-end justify-end"
           variants={item}
         >
-          <NextArrow content="Learn more" href="/about" />
+          <NextArrow content="More about me" href="/about" />
         </motion.div>
       </motion.div>
     </PageWrapper>

@@ -76,7 +76,9 @@ export default function SocialMedia() {
       <motion.div className="h-full" />
       <motion.ul className="flex flex-col gap-6">
         {socialMedia.map((media) => (
-          <SocialMediaIcon key={media.title} {...media} />
+          <li key={media.title}>
+            <SocialMediaIcon {...media} />
+          </li>
         ))}
       </motion.ul>
       <motion.div className="h-40 w-[2px] rounded-full bg-primary" />

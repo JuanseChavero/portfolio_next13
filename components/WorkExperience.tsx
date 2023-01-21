@@ -96,17 +96,17 @@ export default function WorkExperience({
       {/* Selected Experience */}
       <div className="flex-1">
         {selectedExperience ? (
-          <motion.dl
-            className="flex flex-col px-1 py-4 lg:py-2 lg:px-6"
+          <motion.article
+            className="flex flex-col px-1 py-4 lg:py-1 lg:px-6"
             initial={false}
             animate={controls}
           >
             <div className="flex items-start gap-6 pb-3">
               <div className="">
-                <dt className="text-sm text-gray-500 dark:text-gray-400">
+                <span className="text-sm text-gray-500 dark:text-gray-400">
                   Company
-                </dt>
-                <dd className="text-xl font-bold text-primary">
+                </span>
+                <h6 className="text-xl font-bold text-primary">
                   <motion.a
                     href={selectedExperience.companySite}
                     target="_blank"
@@ -116,50 +116,50 @@ export default function WorkExperience({
                   >
                     {selectedExperience.company}
                   </motion.a>
-                </dd>
+                </h6>
               </div>
               <div className="">
-                <dt className="text-sm text-gray-500 dark:text-gray-400">
+                <span className="text-sm text-gray-500 dark:text-gray-400">
                   Date range
-                </dt>
-                <dd className="text-base font-medium text-gray-700 dark:text-gray-300">
+                </span>
+                <p className="text-base font-medium text-gray-700 dark:text-gray-300">
                   {selectedExperience.startDate} - {selectedExperience.endDate}
-                </dd>
+                </p>
               </div>
             </div>
 
             <div className="flex flex-wrap items-start gap-2">
               <div className="w-32">
-                <dt className="text-sm text-gray-500 dark:text-gray-400">
+                <span className="text-sm text-gray-500 dark:text-gray-400">
                   Role
-                </dt>
-                <dd className="text-base font-medium text-gray-700 dark:text-gray-300">
+                </span>
+                <p className="text-base font-medium text-gray-700 dark:text-gray-300">
                   {selectedExperience.role}
-                </dd>
+                </p>
               </div>
 
               <div className="w-20">
-                <dt className="text-sm text-gray-500 dark:text-gray-400">
+                <span className="text-sm text-gray-500 dark:text-gray-400">
                   Modality
-                </dt>
-                <dd className="text-base font-medium text-gray-700 dark:text-gray-300">
+                </span>
+                <p className="text-base font-medium text-gray-700 dark:text-gray-300">
                   {selectedExperience.modality ?? '-'}
-                </dd>
+                </p>
               </div>
 
               <div className="w-20">
-                <dt className="text-sm text-gray-500 dark:text-gray-400">
+                <span className="text-sm text-gray-500 dark:text-gray-400">
                   Workload
-                </dt>
-                <dd className="text-base font-medium text-gray-700 dark:text-gray-300">
+                </span>
+                <p className="text-base font-medium text-gray-700 dark:text-gray-300">
                   {selectedExperience.time ?? '-'}
-                </dd>
+                </p>
               </div>
             </div>
             <div className="mt-4">
-              <h5 className="mb-3 text-xl font-semibold text-primary">
+              <p className="mb-3 text-xl font-semibold text-primary">
                 What I did
-              </h5>
+              </p>
               <ul className="ml-4 list-disc space-y-2 marker:text-primary">
                 {selectedExperience.contents.map((content) => (
                   <li
@@ -171,7 +171,7 @@ export default function WorkExperience({
                 ))}
               </ul>
             </div>
-          </motion.dl>
+          </motion.article>
         ) : (
           <div className="flex h-full w-full items-center justify-center">
             Looks like something went wrong
