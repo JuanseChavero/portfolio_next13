@@ -9,7 +9,7 @@ export default function PointerFollower() {
   return (
     <motion.div
       ref={ref}
-      className="fixed w-32 h-32 bg-white rounded-full -z-10 dark:bg-black"
+      className="fixed hidden w-32 h-32 rounded-full -z-10 bg-slate-50 dark:bg-black md:block"
       animate={{ x, y }}
       transition={{
         type: 'spring',
