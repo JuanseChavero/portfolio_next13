@@ -7,6 +7,7 @@ import Heading from '../../components/Heading';
 import WorkExperience from '../../components/WorkExperience';
 import { experiences } from '../../data/experiences';
 import { containerVariant, itemVariant } from '../../utils/motion';
+import my from '../../data/personal';
 
 export default function About() {
   return (
@@ -20,9 +21,8 @@ export default function About() {
         <Heading title="Introduction" variants={itemVariant} />
         <div className="space-y-4 text-lg">
           <motion.p variants={itemVariant}>
-            Hi, my name is{' '}
-            <span className="text-secondary">Juan Segundo Chavero</span> and I
-            am a <span className="text-secondary">full-stack developer</span>{' '}
+            Hi, my name is <span className="text-secondary">{my.name}</span> and
+            I am a <span className="text-secondary">full-stack developer</span>{' '}
             and <span className="text-secondary">systems analyst</span> based in
             Argentina. I have had a lifelong interest in computers and software.
             My career in Systems Analysis deepened my understanding of the

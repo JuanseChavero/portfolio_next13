@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { SocialMediaIcon } from './SocialMedia';
 import { socialMedia } from '../data/socialMedia';
+import my from '../data/personal';
 
 export default function Footer() {
   return (
@@ -24,7 +25,7 @@ export default function Footer() {
       </motion.div>
       <div className="text-center">
         <span className="text-gray-500 text-md dark:text-gray-400">
-          Juan Segundo Chavero &copy; {new Date().getFullYear()}
+          {my.name} &copy; {new Date().getFullYear()}
         </span>
       </div>
     </footer>

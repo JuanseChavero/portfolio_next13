@@ -84,13 +84,16 @@ export default function Contact() {
       >
         <Heading title="Contact" variants={itemVariant} />
         <motion.div
-          className="mb-6 text-xl text-left lg:text-justify"
+          className="mb-6 space-y-2 text-xl text-left lg:text-justify"
           variants={itemVariant}
         >
           <p>
             I&apos;m excited to hear about your project and see how I can help
-            bring your ideas to life. Please fill out the contact form and
-            I&apos;ll get back to you as soon as possible.
+            bring your ideas to life.
+          </p>
+          <p>
+            Please fill out the contact form and I&apos;ll get back to you as
+            soon as possible.
           </p>
         </motion.div>
         <motion.form ref={formRef} variants={itemVariant}>

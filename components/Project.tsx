@@ -26,7 +26,7 @@ export default function DisplayProject({
       x: 0,
       transition: {
         duration: 1,
-        x: { type: 'spring', duration: 2 },
+        x: { type: 'spring', duration: 2, bounce: 0 },
       },
     },
   };

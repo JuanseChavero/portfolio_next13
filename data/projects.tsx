@@ -1,6 +1,6 @@
 import { StaticImageData } from 'next/image';
 import { ReactElement } from 'react';
-import paintShop from '../public/paint-shop.png';
+import paintShop from '../public/images/projects/paint-shop.png';
 
 export type Project = {
   name: string;

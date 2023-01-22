@@ -1,5 +1,6 @@
 import { ReactElement } from 'react';
 import { FaGithub, FaLinkedinIn, FaPortrait } from 'react-icons/fa';
+import my from './personal';
 
 export type SocialMediaIcon = {
   icon: ReactElement;
@@ -16,16 +17,16 @@ export const socialMedia: SocialMediaIcon[] = [
   {
     icon: <FaLinkedinIn tabIndex={0} className={socialMediaButtonStyle} />,
     title: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/juan-segundo-chavero/',
+    href: my.linkedin,
   },
   {
     icon: <FaGithub tabIndex={0} className={socialMediaButtonStyle} />,
     title: 'Github',
-    href: 'https://github.com/JuanseChavero',
+    href: my.github,
   },
   {
     icon: <FaPortrait tabIndex={0} className={socialMediaButtonStyle} />,
     title: 'Resume',
-    href: 'https://flowcv.com/resume/7c97o4cqt1',
+    href: my.resume,
   },
 ];

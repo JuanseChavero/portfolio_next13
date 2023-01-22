@@ -10,26 +10,27 @@ import { projects } from '../../data/projects';
 import { SiGithub } from 'react-icons/si';
 import ShadowButton from '../../components/ShadowButton';
 import Tooltip from '../../components/Tooltip';
+import my from '../../data/personal';
 
 export default function Projects() {
   return (
     <PageWrapper>
       <motion.div
-        className="container flex max-w-5xl flex-col items-start"
+        className="container flex flex-col items-start max-w-5xl"
         initial="hidden"
         animate="visible"
         variants={containerVariant}
       >
         <Heading title="Projects" variants={itemVariant} />
         <motion.div
-          className="mb-6 flex w-full flex-col justify-between gap-4 md:flex-row md:items-center"
+          className="flex flex-col justify-between w-full gap-4 mb-6 md:flex-row md:items-center"
           variants={itemVariant}
         >
           <p className="text-xl">
             I&apos;m currently working on a{' '}
             <a
               className="text-primary underline-offset-2 hover:underline"
-              href="https://github.com/JuanseChavero/FullstackOpen-2022-part7/tree/main/bloglist"
+              href={`${my.github}/FullstackOpen-2022-part7/tree/main/bloglist`}
               target="_blank"
               rel="noreferrer"
               aria-label="Link to Fullstack Blog App repository"
@@ -40,7 +41,7 @@ export default function Projects() {
           </p>
           <div className="flex items-center gap-2">
             <a
-              href="https://github.com/JuanseChavero"
+              href={my.github}
               target="_blank"
               rel="noreferrer"
               aria-label="Link to my github repository"
@@ -53,13 +54,13 @@ export default function Projects() {
             </a>
           </div>
         </motion.div>
-        <div className="flex w-full flex-col gap-4 lg:gap-12">
+        <div className="flex flex-col w-full gap-4 lg:gap-12">
           {projects.map((project) => (
             <DisplayProject key={project.name} {...project} />
           ))}
         </div>
         <motion.div
-          className="mt-6 flex w-full justify-end"
+          className="flex justify-end w-full mt-6"
           variants={itemVariant}
         >
           <NextArrow content="Contact me" href="/contact" />

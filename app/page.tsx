@@ -3,18 +3,15 @@
 import { motion } from 'framer-motion';
 import NextArrow from '../components/NextArrow';
 import PageWrapper from '../components/PageWrapper';
+import my from '../data/personal';
 
 export default function Home() {
-  const name = 'Juan Segundo Chavero.';
-  const profession =
-    'Crafting elegant solutions for complex problems, one line of code at a time.';
-
   const container = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.5,
+        staggerChildren: 0.3,
       },
     },
   };
@@ -41,7 +38,7 @@ export default function Home() {
   return (
     <PageWrapper>
       <motion.div
-        className="container flex max-w-5xl flex-col tracking-wider"
+        className="container flex flex-col max-w-5xl tracking-wider"
         variants={container}
         initial="hidden"
         animate="show"
@@ -58,13 +55,14 @@ export default function Home() {
           className="mt-2 mb-4 break-normal font-header text-5xl font-bold text-primary transition-[letter-spacing,font-size,line-height] duration-700 hover:tracking-widest sm:text-7xl"
           variants={nameVariant}
         >
-          {name}
+          {my.name}.
         </motion.h1>
         <motion.h2
           className="mb-5 text-3xl tracking-tight text-slate-400 drop-shadow-md sm:text-5xl"
           variants={item}
         >
-          {profession}
+          Crafting elegant solutions for complex problems, one line of code at a
+          time.
         </motion.h2>
         <motion.div className="max-w-3xl" variants={item}>
           <p className="text-xl sm:text-2xl">
@@ -79,7 +77,7 @@ export default function Home() {
           Let&apos;s create something great together!
         </motion.p>
         <motion.div
-          className="mt-6 flex w-full flex-col items-end justify-end"
+          className="flex flex-col items-end justify-end w-full mt-6"
           variants={item}
         >
           <NextArrow content="More about me" href="/about" />

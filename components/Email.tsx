@@ -1,8 +1,7 @@
 import { motion } from 'framer-motion';
+import my from '../data/personal';
 
 export default function Email() {
-  const email = 'juansechavero@gmail.com';
-
   return (
     <motion.div
       className="fixed flex-col items-center justify-center hidden h-screen gap-6 right-8 md:flex xl:right-12"
@@ -20,9 +19,9 @@ export default function Email() {
         whileHover={{ letterSpacing: '0.1em' }}
         whileFocus={{ letterSpacing: '0.1em' }}
         aria-label="Link to my email"
-        href={`mailto:${email}`}
+        href={`mailto:${my.email}`}
       >
-        {email}
+        {my.email}
       </motion.a>
       <motion.div className="h-40 w-[2px] rounded-full bg-primary" />
     </motion.div>
