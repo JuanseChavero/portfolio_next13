@@ -8,7 +8,7 @@ export default function DefaultTags() {
       <meta name="author" content="Juan Segundo Chavero" />
       <meta
         name="keywords"
-        content="juan segundo chavero, juan s. chavero, juanse chavero, JuanseChavero, software developer, programmer, coding, react, javascript, typescript, nextjs, redux, nodejs, express, flutter, dart, mongodb, mern stack."
+        content="juan segundo chavero, juan s. chavero, juanse chavero, JuanseChavero, juan segundo chavero portfolio, juanse chavero portfolio, software developer, programmer, coding, react, javascript, typescript, nextjs, redux, nodejs, express, flutter, dart, mongodb, mern stack."
       />
       <meta property="og:title" content="Juan S. Chavero | Portfolio" />
       <meta
