@@ -43,10 +43,10 @@ export default function ScrollToTop() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed right-5 bottom-5 hidden lg:block"
+            className="fixed z-50 hidden right-5 bottom-5 lg:block"
           >
             <button
-              className="h-16 w-16 rounded-full bg-slate-800 p-4 dark:bg-slate-100"
+              className="w-16 h-16 p-4 rounded-full bg-slate-800 dark:bg-slate-100"
               type="button"
               aria-label="Scroll to top"
               onClick={scrollToTop}
