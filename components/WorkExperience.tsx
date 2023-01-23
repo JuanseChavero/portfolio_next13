@@ -69,7 +69,7 @@ export default function WorkExperience({
       <div className="flex-1">
         {selectedExperience ? (
           <motion.article
-            className="flex flex-col px-1 py-4 lg:py-1 lg:px-6"
+            className="flex flex-col px-1 py-4 lg:py-0 lg:px-6"
             initial={false}
             animate={controls}
           >
