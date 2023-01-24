@@ -10,7 +10,7 @@ export default function Head() {
         name="description"
         content="I am a software developer with a passion for creating elegant, efficient, and user-friendly solutions. My skills include expertise in various programming languages and frameworks such as React, Flutter, NextJS, NodeJS, Express, Typescript and more."
       />
-      <link rel="canonical" href="https://juansegundochavero.vercel.app" />
+      <link rel="canonical" href="juansegundochavero.vercel.app" />
       <DefaultTags />
     </>
   );
