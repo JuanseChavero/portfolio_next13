@@ -11,6 +11,12 @@ import {
   SiMongodb,
   SiMysql,
   SiDart,
+  SiCypress,
+  SiBootstrap,
+  SiRedux,
+  SiTailwindcss,
+  SiJest,
+  SiMaterialdesign,
 } from 'react-icons/si';
 
 export type Skill = {
@@ -70,5 +76,30 @@ export const skills: Skill[] = [
   {
     title: 'MySQL',
     icon: <SiMysql className={iconStyle} />,
+  },
+  {
+    title: 'Cypress',
+    icon: <SiCypress className={iconStyle} />,
+  },
+  {
+    title: 'Jest',
+    icon: <SiJest className={iconStyle} />,
+  },
+
+  {
+    title: 'Redux',
+    icon: <SiRedux className={iconStyle} />,
+  },
+  {
+    title: 'TailwindCSS',
+    icon: <SiTailwindcss className={iconStyle} />,
+  },
+  {
+    title: 'Bootstrap',
+    icon: <SiBootstrap className={iconStyle} />,
+  },
+  {
+    title: 'Material Design',
+    icon: <SiMaterialdesign className={iconStyle} />,
   },
 ];
