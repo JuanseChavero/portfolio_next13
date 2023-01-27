@@ -25,7 +25,7 @@ export default function PageWrapper({ children, className }: PageWrapperProps) {
         // animate={{ opacity: 1, y: 0 }}
         // exit={{ opacity: 0, y: 50 }}
         // transition={{ delay: 1 }}
-        className={`flex min-h-[calc(100vh-120px-124px)] flex-col items-center justify-center overflow-y-hidden px-8 md:px-24 lg:min-h-[calc(100vh-120px-72px)] lg:px-24 xl:px-0 ${className}`}
+        className={`flex min-h-[calc(100vh-120px-124px)] flex-col items-center justify-center overflow-hidden px-8 md:px-24 lg:min-h-[calc(100vh-120px-72px)] lg:px-24 xl:px-0 ${className}`}
       >
         {children}
       </motion.div>
