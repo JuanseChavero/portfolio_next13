@@ -27,17 +27,9 @@ export default function Projects() {
           variants={itemVariant}
         >
           <p className="text-xl">
-            I&apos;m currently working on a{' '}
-            <a
-              className="text-primary underline-offset-2 hover:underline"
-              href={`${my.github}/FullstackOpen-2022-part7/tree/main/bloglist`}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Link to Fullstack Blog App repository"
-            >
-              Fullstack Blog App
-            </a>
-            , similar to Reddit.
+            I&apos;m currently freelancing, working on two projects. One will be
+            a webpage for a travel agency. The other, a social-media LinkedIn
+            style for a security company.
           </p>
           <div className="flex items-center gap-2">
             <a
