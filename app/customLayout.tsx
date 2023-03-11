@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactNode, useRef } from 'react';
+import { ReactNode } from 'react';
 import Email from '../components/Email';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
