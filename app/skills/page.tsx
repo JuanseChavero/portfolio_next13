@@ -12,7 +12,7 @@ export default function Skills() {
   return (
     <PageWrapper>
       <motion.div
-        className="container flex flex-col max-w-5xl"
+        className="container flex max-w-5xl flex-col"
         initial="hidden"
         animate="visible"
         variants={containerVariant}
@@ -24,7 +24,7 @@ export default function Skills() {
             in the recent years.
           </motion.p>
         </div>
-        <div className="w-full mt-6">
+        <div className="mt-6 w-full">
           <motion.div
             className="grid grid-cols-1 gap-2 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 md:gap-4 lg:grid-cols-6"
             variants={itemVariant}
@@ -35,7 +35,7 @@ export default function Skills() {
           </motion.div>
         </div>
         <motion.div
-          className="flex justify-end w-full mt-8"
+          className="mt-8 flex w-full justify-end"
           variants={itemVariant}
         >
           <NextArrow content="My projects" href="/projects" />

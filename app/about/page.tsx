@@ -13,7 +13,7 @@ export default function About() {
   return (
     <PageWrapper>
       <motion.div
-        className="container flex flex-col max-w-5xl text-lg md:text-justify"
+        className="container flex max-w-5xl flex-col text-lg md:text-justify"
         initial="hidden"
         animate="visible"
         variants={containerVariant}
@@ -36,7 +36,7 @@ export default function About() {
             developing and maintaining large-scale software systems.
           </motion.p>
         </div>
-        <motion.div className="flex flex-col items-center justify-center mt-2 text-center">
+        <motion.div className="mt-2 flex flex-col items-center justify-center text-center">
           <Heading
             title="My professional experience"
             titleSize="small"
@@ -47,7 +47,7 @@ export default function About() {
           <WorkExperience experiences={experiences} variants={itemVariant} />
         </motion.div>
         <motion.div
-          className="flex justify-end w-full mt-3"
+          className="mt-3 flex w-full justify-end"
           variants={itemVariant}
         >
           <NextArrow content="Check out my skills" href="/skills" />
