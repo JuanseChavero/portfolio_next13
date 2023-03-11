@@ -1,10 +1,8 @@
-'use client';
-
 import './globals.css';
-import { useEffect, useState } from 'react';
-import { Exo, Exo_2 } from '@next/font/google';
+import { Exo, Exo_2 } from 'next/font/google';
 import Providers from './providers';
 import Layout from './customLayout';
+import { Metadata } from 'next';
 
 const font = Exo_2({
   variable: '--font-global',
@@ -17,29 +15,39 @@ const headerFont = Exo({
   display: 'swap',
 });
 
+export const metadata: Metadata = {
+  title: {
+    default: 'Portfolio | Juan S. Chavero',
+    template: '%s | Juan S. Chavero',
+  },
+  viewport: { width: 'device-width', initialScale: 1, minimumScale: 1 },
+  keywords:
+    'juan segundo chavero, juan s. chavero, juanse chavero, JuanseChavero, juan segundo chavero portfolio, juanse chavero portfolio, software developer, programmer, coding, react, javascript, typescript, nextjs, redux, nodejs, express, flutter, dart, mongodb, mern stack.',
+  authors: [{ name: 'Juan Segundo Chavero' }],
+  description:
+    'I am a software developer with a passion for creating elegant, efficient, and user-friendly solutions. My skills include expertise in various programming languages and frameworks such as React, Flutter, NextJS, NodeJS, Express, Typescript and more.',
+  alternates: {
+    canonical: 'https://juansegundochavero.vercel.app',
+  },
+  openGraph: {
+    title: 'Juan S. Chavero | Portfolio',
+    description:
+      'I am a software developer with a passion for creating elegant, efficient, and user-friendly solutions. My skills include expertise in various programming languages and frameworks such as React, Flutter, NextJS, NodeJS, Express, Typescript and more.',
+    url: 'https://juansegundochavero.vercel.app',
+    images: 'https://juansegundochavero.vercel.app/images/logos/logo.svg',
+    locale: 'en',
+    type: 'website',
+    siteName: 'Juan S. Chavero | Software Developer',
+  },
+  robots: 'index, follow',
+  icons: '/favicon.ico',
+};
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  // Workaround for Next Themes hydration issue until it is fixed or I figure something out
-  // This causes a white screen on first page load
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return (
-      // Until rendering the actual layout, display a black screen
-      <html lang="en" className="bg-black">
-        <head />
-        <body></body>
-      </html>
-    );
-  }
-
   return (
     <html lang="en" className={font.variable} suppressHydrationWarning>
       <head />
