@@ -1,6 +1,6 @@
 'use client';
 
-import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
+import { AnimatePresence, LayoutGroup, m } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import { useSidebar } from '../contexts/sidebarContext';
 import Link from 'next/link';
@@ -28,7 +28,7 @@ export function NavItem({ title, to }: NavItemProps) {
   return (
     <Link href={to} className="outline-none" title={title} tabIndex={-1}>
       {' '}
-      <motion.div
+      <m.div
         tabIndex={0}
         className={`relative w-[7.5rem] rounded border-2 border-primary py-2 text-center font-semibold outline-none transition-colors focus-visible:border-black dark:focus-visible:border-white ${
           !isActive ? 'lg:text-primary lg:hover:bg-primary/10' : 'text-white'
@@ -37,17 +37,17 @@ export function NavItem({ title, to }: NavItemProps) {
         <span className={`uppercase tracking-wider`}>{title}</span>
         <AnimatePresence>
           {isActive && (
-            <motion.div
+            <m.div
               key={to}
               layoutId="background"
-              className="absolute top-0 left-0 w-full h-full -z-10"
+              className="absolute top-0 left-0 -z-10 h-full w-full"
               initial={false}
               animate={{ backgroundColor: '#fb7e14' }}
               transition={{ type: 'tween', duration: 0.5 }}
             />
           )}
         </AnimatePresence>
-      </motion.div>
+      </m.div>
     </Link>
   );
 }
@@ -63,7 +63,7 @@ export default function Navbar() {
     ease: 'easeInOut',
   };
   return (
-    <motion.header
+    <m.header
       className={`z-30 flex w-full justify-center px-6 py-9 xl:px-10`}
       initial="hidden"
       animate="visible"
@@ -79,13 +79,13 @@ export default function Navbar() {
         <Logo />
 
         {/* Desktop */}
-        <motion.hr
+        <m.hr
           className="ml-auto h-[2px] rounded-full border-none bg-primary text-end"
           whileInView={{ width: '100%' }}
           transition={hrVariant}
           viewport={{ once: true }}
         />
-        <motion.ul className="hidden items-center divide-x-[0.5rem] divide-white dark:divide-black lg:flex">
+        <m.ul className="hidden items-center divide-x-[0.5rem] divide-white dark:divide-black lg:flex">
           <LayoutGroup>
             {routes.map((route) => (
               <li key={route.to}>
@@ -93,8 +93,8 @@ export default function Navbar() {
               </li>
             ))}
           </LayoutGroup>
-        </motion.ul>
-        <motion.hr
+        </m.ul>
+        <m.hr
           className="mr-auto hidden h-[2px] rounded-full border-none bg-primary text-end lg:inline"
           whileInView={{ width: '100%' }}
           transition={hrVariant}
@@ -105,15 +105,15 @@ export default function Navbar() {
         </div>
 
         {/* Mobile */}
-        <motion.div
-          className="flex self-center gap-3 justify-self-center lg:hidden"
+        <m.div
+          className="flex gap-3 self-center justify-self-center lg:hidden"
           initial={false}
           animate={isOpen ? 'open' : 'closed'}
         >
           <ThemeSwitch />
           <Sidebar />
-        </motion.div>
+        </m.div>
       </nav>
-    </motion.header>
+    </m.header>
   );
 }

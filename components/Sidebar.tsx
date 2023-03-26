@@ -7,13 +7,13 @@ import {
 } from '@chakra-ui/modal';
 import { useSidebar } from '../contexts/sidebarContext';
 import { useRef } from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { ChakraProvider } from '@chakra-ui/provider';
 import { theme } from '@chakra-ui/theme';
 import { NavItem, routes } from './Navbar';
 
 const Path = (props: any) => (
-  <motion.path
+  <m.path
     fill="transparent"
     strokeWidth="3"
     stroke="hsl(0, 0%, 18%)"
@@ -26,7 +26,7 @@ const SidebarButton = ({ isOpen }: { isOpen: boolean }) => {
   return (
     <svg
       viewBox="0 0 20 20"
-      className="flex h-full w-full flex-col items-center justify-center"
+      className="z-[100] flex h-full w-full flex-col items-center justify-center"
     >
       <Path
         variants={{
@@ -71,16 +71,22 @@ export default function Sidebar() {
     }
   };
 
+  /// Given that "Chakra UI" is using "Framer-motion" with "motion" imports,
+  /// then the change from "motion" to "m" for trying to reduce the bundle
+  /// size is possibly useless, becuase "motion" preloads all the animations
+  /// according to the documentation.
+  /// To check this, add the "strict" prop to "LazyMotion" in "customLayout.tsx".
+
   return (
     <ChakraProvider theme={theme}>
-      <motion.button
+      <m.button
         ref={btnRef}
         onClick={onClickModal}
         aria-label="Sidebar toggler"
         className="h-12 w-12 rounded border-2 border-primary p-2"
       >
         <SidebarButton isOpen={isOpen} />
-      </motion.button>
+      </m.button>
       <Drawer
         isOpen={isOpen}
         placement="right"

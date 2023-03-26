@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { socialMedia, SocialMediaIcon } from '../data/socialMedia';
 import Tooltip from './Tooltip';
 
@@ -32,8 +32,8 @@ export function SocialMediaIcon({
 
 export default function SocialMedia() {
   return (
-    <motion.div
-      className="fixed flex-col items-center justify-center hidden h-screen gap-6 left-8 md:flex xl:left-12"
+    <m.div
+      className="fixed left-8 hidden h-screen flex-col items-center justify-center gap-6 md:flex xl:left-12"
       initial={{ opacity: 0, y: 400 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 400 }}
@@ -41,19 +41,19 @@ export default function SocialMedia() {
         y: { type: 'spring', bounce: 0, duration: 1.5, delay: 1.25 },
       }}
     >
-      <motion.div className="h-full" />
-      <motion.ul className="flex flex-col gap-6">
+      <m.div className="h-full" />
+      <m.ul className="flex flex-col gap-6">
         {socialMedia.map((media) => (
-          <motion.li
+          <m.li
             key={media.title}
             whileHover={{ scale: 1.3 }}
             whileFocus={{ scale: 1.3 }}
           >
             <SocialMediaIcon {...media} />
-          </motion.li>
+          </m.li>
         ))}
-      </motion.ul>
-      <motion.div className="h-40 w-[2px] rounded-full bg-primary" />
-    </motion.div>
+      </m.ul>
+      <m.div className="h-40 w-[2px] rounded-full bg-primary" />
+    </m.div>
   );
 }

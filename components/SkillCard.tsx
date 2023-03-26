@@ -1,10 +1,10 @@
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { Skill } from '../data/skills';
 
 export default function SkillCard({ title, icon }: Skill) {
   return (
-    <motion.div
-      className="relative flex flex-col items-center justify-center w-full gap-6 p-6 text-center border rounded shadow-md cursor-default border-primary bg-neutral-50 dark:bg-neutral-900"
+    <m.div
+      className="relative flex w-full cursor-default flex-col items-center justify-center gap-6 rounded border border-primary bg-neutral-50 p-6 text-center shadow-md dark:bg-neutral-900"
       whileHover={{
         scale: 1.05,
         zIndex: 30,
@@ -12,9 +12,9 @@ export default function SkillCard({ title, icon }: Skill) {
       transition={{ scale: { duration: 0.3 } }}
     >
       <div className="mt-2">{icon}</div>
-      <span className="text-base text-gray-500 uppercase dark:text-gray-400">
+      <span className="text-base uppercase text-gray-500 dark:text-gray-400">
         {title}
       </span>
-    </motion.div>
+    </m.div>
   );
 }

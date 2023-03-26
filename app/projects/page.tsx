@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import Heading from '../../components/Heading';
 import NextArrow from '../../components/NextArrow';
 import PageWrapper from '../../components/PageWrapper';
@@ -15,14 +15,14 @@ import my from '../../data/personal';
 export default function Projects() {
   return (
     <PageWrapper>
-      <motion.div
+      <m.div
         className="container flex max-w-5xl flex-col items-start"
         initial="hidden"
         animate="visible"
         variants={containerVariant}
       >
         <Heading title="Projects" variants={itemVariant} />
-        <motion.div
+        <m.div
           className="mb-6 flex w-full flex-col justify-between gap-4 md:flex-row md:items-center"
           variants={itemVariant}
         >
@@ -45,19 +45,16 @@ export default function Projects() {
               </Tooltip>
             </a>
           </div>
-        </motion.div>
+        </m.div>
         <div className="flex w-full flex-col gap-4 lg:gap-12">
           {projects.map((project) => (
             <DisplayProject key={project.name} {...project} />
           ))}
         </div>
-        <motion.div
-          className="mt-6 flex w-full justify-end"
-          variants={itemVariant}
-        >
+        <m.div className="mt-6 flex w-full justify-end" variants={itemVariant}>
           <NextArrow content="Contact me" href="/contact" />
-        </motion.div>
-      </motion.div>
+        </m.div>
+      </m.div>
     </PageWrapper>
   );
 }

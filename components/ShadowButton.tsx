@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { ReactNode } from 'react';
 
 interface ShadowButtonProps {
@@ -8,16 +8,16 @@ interface ShadowButtonProps {
 
 export default function ShadowButton({ icon, title }: ShadowButtonProps) {
   return (
-    <motion.div className="relative flex items-center justify-center w-48 h-12 cursor-pointer grow">
-      <motion.div
-        className="flex items-center justify-center w-full h-full gap-2 px-6 bg-white border-2 border-black rounded shadow hover:bg-secondary dark:border-neutral-100 dark:bg-neutral-900 dark:hover:bg-secondary"
+    <m.div className="relative flex h-12 w-48 grow cursor-pointer items-center justify-center">
+      <m.div
+        className="flex h-full w-full items-center justify-center gap-2 rounded border-2 border-black bg-white px-6 shadow hover:bg-secondary dark:border-neutral-100 dark:bg-neutral-900 dark:hover:bg-secondary"
         whileTap={{ x: '6px', y: '6px' }}
         whileHover={{ x: '-0.1rem', y: '-0.1rem' }}
       >
         {icon}
-        <span className="font-medium tracking-wide uppercase">{title}</span>
-      </motion.div>
+        <span className="font-medium uppercase tracking-wide">{title}</span>
+      </m.div>
       <div className="absolute -right-[6px] -bottom-[6px] -z-10 h-full w-full rounded bg-neutral-800 dark:bg-neutral-100" />
-    </motion.div>
+    </m.div>
   );
 }

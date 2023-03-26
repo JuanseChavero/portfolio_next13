@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, m } from 'framer-motion';
 import { ArrowUpIcon } from '@heroicons/react/20/solid';
 import Tooltip from './Tooltip';
 
@@ -39,21 +39,21 @@ export default function ScrollToTop() {
     <AnimatePresence>
       {isVisible && (
         <Tooltip content="Scroll to top" side="top">
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed z-50 hidden right-5 bottom-5 lg:block"
+            className="fixed right-5 bottom-5 z-50 hidden lg:block"
           >
             <button
-              className="w-16 h-16 p-4 rounded-full bg-slate-800 dark:bg-slate-100"
+              className="h-16 w-16 rounded-full bg-slate-800 p-4 dark:bg-slate-100"
               type="button"
               aria-label="Scroll to top"
               onClick={scrollToTop}
             >
               <ArrowUpIcon className="text-white dark:text-black" />
             </button>
-          </motion.div>
+          </m.div>
         </Tooltip>
       )}
     </AnimatePresence>

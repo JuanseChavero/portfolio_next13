@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { FiExternalLink } from 'react-icons/fi';
 import { SiGithub } from 'react-icons/si';
-import { Variants, motion } from 'framer-motion';
+import { Variants, m } from 'framer-motion';
 import { Project } from '../data/projects';
 import Tooltip from './Tooltip';
 
@@ -46,7 +46,7 @@ export default function DisplayProject({
 
   return (
     <>
-      <motion.div
+      <m.div
         className={`relative hidden h-[20rem] w-full items-center lg:flex ${
           alignmentIsLeft ? 'justify-start' : 'justify-end'
         }`}
@@ -54,7 +54,7 @@ export default function DisplayProject({
         animate="visible"
       >
         {/* Project Image */}
-        <motion.div
+        <m.div
           className="group relative z-10 h-full w-[60%] overflow-hidden rounded-lg shadow-md"
           variants={imageVariant}
         >
@@ -70,9 +70,9 @@ export default function DisplayProject({
               src={image}
               priority
             />
-            <div className="absolute inset-0 w-full h-full transition-all bg-primary/30 group-hover:hidden" />
+            <div className="absolute inset-0 h-full w-full bg-primary/30 transition-all group-hover:hidden" />
           </a>
-        </motion.div>
+        </m.div>
 
         {/* Project Description */}
         <div
@@ -81,7 +81,7 @@ export default function DisplayProject({
           }`}
         >
           {/* Title */}
-          <motion.div
+          <m.div
             className={`pointer-events-auto flex w-max flex-col ${
               alignmentIsLeft ? 'text-end' : 'text-start'
             }`}
@@ -95,14 +95,14 @@ export default function DisplayProject({
               className="group"
               aria-label={`Link to ${name} website`}
             >
-              <h3 className="text-2xl font-bold text-start text-primary group-hover:text-black dark:group-hover:text-white">
+              <h3 className="text-start text-2xl font-bold text-primary group-hover:text-black dark:group-hover:text-white">
                 {name}
               </h3>
             </a>
-          </motion.div>
+          </m.div>
 
           {/* Description */}
-          <motion.div
+          <m.div
             variants={descriptionVariant}
             className={`pointer-events-auto flex h-min flex-col gap-2 rounded bg-secondary px-6 py-4 shadow-lg`}
           >
@@ -113,11 +113,11 @@ export default function DisplayProject({
             >
               {description}
             </span>
-          </motion.div>
+          </m.div>
 
           {/* Footer */}
-          <div className="flex flex-col w-full gap-4">
-            <motion.div
+          <div className="flex w-full flex-col gap-4">
+            <m.div
               variants={itemVariant}
               className={`pointer-events-auto flex ${
                 alignmentIsLeft ? 'justify-end' : 'justify-start'
@@ -133,8 +133,8 @@ export default function DisplayProject({
                   </li>
                 ))}
               </ul>
-            </motion.div>
-            <motion.div
+            </m.div>
+            <m.div
               variants={itemVariant}
               className={`pointer-events-auto flex items-center gap-4 ${
                 alignmentIsLeft ? 'justify-end' : 'justify-start'
@@ -162,13 +162,13 @@ export default function DisplayProject({
                   <FiExternalLink className="h-7 w-7 group-hover:stroke-primary" />
                 </a>
               </Tooltip>
-            </motion.div>
+            </m.div>
           </div>
         </div>
-      </motion.div>
+      </m.div>
 
       {/* Mobile */}
-      <motion.div
+      <m.div
         variants={imageVariant}
         className={`relative block h-max w-full rounded border-2 border-primary bg-gray-200 p-6 shadow-md dark:bg-neutral-900 lg:hidden`}
       >
@@ -186,7 +186,7 @@ export default function DisplayProject({
           </div>
           <div className="text-gray-900 dark:text-gray-300">{description}</div>
           {/* Footer */}
-          <div className="flex flex-col w-full gap-4 mt-4">
+          <div className="mt-4 flex w-full flex-col gap-4">
             <div className={`pointer-events-auto`}>
               <ul className="flex flex-wrap gap-3">
                 {technologiesUsed.map((technology) => (
@@ -225,7 +225,7 @@ export default function DisplayProject({
             </div>
           </div>
         </div>
-      </motion.div>
+      </m.div>
     </>
   );
 }

@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, m } from 'framer-motion';
 import { ArrowPathIcon, CheckCircleIcon } from '@heroicons/react/20/solid';
 import { TextArea, Textfield } from '../../components/Textfield';
 import { containerVariant, itemVariant } from '../../utils/motion';
@@ -76,15 +76,15 @@ export default function Contact() {
   };
   return (
     <PageWrapper>
-      <motion.div
-        className="container flex flex-col max-w-5xl"
+      <m.div
+        className="container flex max-w-5xl flex-col"
         variants={containerVariant}
         initial="hidden"
         animate="visible"
       >
         <Heading title="Contact" variants={itemVariant} />
-        <motion.div
-          className="mb-6 space-y-2 text-xl text-left lg:text-justify"
+        <m.div
+          className="mb-6 space-y-2 text-left text-xl lg:text-justify"
           variants={itemVariant}
         >
           <p>
@@ -95,46 +95,46 @@ export default function Contact() {
             Please fill out the contact form and I&apos;ll get back to you as
             soon as possible.
           </p>
-        </motion.div>
-        <motion.form ref={formRef} variants={itemVariant}>
+        </m.div>
+        <m.form ref={formRef} variants={itemVariant}>
           <AnimatePresence mode="wait">
             {sentEmail ? (
-              <motion.div
+              <m.div
                 key="message"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 className={`flex h-[460px] w-full flex-col items-center justify-center`}
               >
-                <motion.div
+                <m.div
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <CheckCircleIcon className="w-24 h-24 fill-green-500" />
-                </motion.div>
+                  <CheckCircleIcon className="h-24 w-24 fill-green-500" />
+                </m.div>
                 <div className="max-w-sm">
-                  <p className="mt-4 text-lg text-center text-green-500">
+                  <p className="mt-4 text-center text-lg text-green-500">
                     Thank you for reaching out.
                   </p>
-                  <p className="mt-4 text-lg text-center text-green-500">
+                  <p className="mt-4 text-center text-lg text-green-500">
                     I have received your message and will get back to you as
                     soon as possible.
                   </p>
-                  <p className="mt-4 text-lg text-center text-green-500">
+                  <p className="mt-4 text-center text-lg text-green-500">
                     I appreciate your interest and look forward to discussing
                     your project with you!
                   </p>
                 </div>
-              </motion.div>
+              </m.div>
             ) : (
               <div className="flex flex-col gap-6 lg:flex-row">
-                <motion.div
+                <m.div
                   key="form"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="flex flex-col flex-1 w-full gap-5"
+                  className="flex w-full flex-1 flex-col gap-5"
                 >
                   <Textfield
                     name="user_name"
@@ -154,7 +154,7 @@ export default function Contact() {
                     label="Message"
                     {...message}
                   />
-                  <motion.button
+                  <m.button
                     type="button"
                     aria-label="Submit form"
                     onClick={onSubmit}
@@ -163,14 +163,14 @@ export default function Contact() {
                     }`}
                   >
                     {isSending ? (
-                      <ArrowPathIcon className="w-8 h-8 animate-spin" />
+                      <ArrowPathIcon className="h-8 w-8 animate-spin" />
                     ) : (
                       'Submit'
                     )}
-                  </motion.button>
-                </motion.div>
-                <motion.div
-                  className="flex flex-col mb-6"
+                  </m.button>
+                </m.div>
+                <m.div
+                  className="mb-6 flex flex-col"
                   variants={contactCardVariant}
                 >
                   <span className="mb-2 text-base">
@@ -181,12 +181,12 @@ export default function Contact() {
                       <ContactCard key={wayToContact.title} {...wayToContact} />
                     ))}
                   </div>
-                </motion.div>
+                </m.div>
               </div>
             )}
           </AnimatePresence>
-        </motion.form>
-      </motion.div>
+        </m.form>
+      </m.div>
     </PageWrapper>
   );
 }

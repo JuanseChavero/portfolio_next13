@@ -1,7 +1,7 @@
 import {
   AnimatePresence,
   LayoutGroup,
-  motion,
+  m,
   useAnimationControls,
   Variants,
 } from 'framer-motion';
@@ -30,8 +30,8 @@ export default function WorkExperience({
   };
 
   return (
-    <motion.div
-      className="container flex flex-col max-w-2xl rounded-md text-start lg:flex-row"
+    <m.div
+      className="container flex max-w-2xl flex-col rounded-md text-start lg:flex-row"
       variants={variants}
     >
       {/* Works List */}
@@ -39,27 +39,27 @@ export default function WorkExperience({
         <ul className="flex flex-row overflow-x-scroll text-center lg:w-40 lg:flex-col lg:overflow-x-clip">
           <LayoutGroup>
             {experiences.map(({ company }) => (
-              <motion.li
+              <m.li
                 key={company}
                 onClick={() => onClick(company)}
-                className="relative flex-1 p-4 rounded cursor-pointer hover:bg-black/10 dark:hover:bg-white/10"
+                className="relative flex-1 cursor-pointer rounded p-4 hover:bg-black/10 dark:hover:bg-white/10"
               >
                 {company}
                 <AnimatePresence>
                   {selectedExperience?.company === company && (
-                    <motion.div
+                    <m.div
                       key={company}
                       layoutId="company"
-                      className="absolute bottom-0 left-0 right-0 w-full h-1 -z-10 lg:right-0 lg:left-auto lg:h-full lg:w-1"
+                      className="absolute bottom-0 left-0 right-0 -z-10 h-1 w-full lg:right-0 lg:left-auto lg:h-full lg:w-1"
                       initial={false}
                       animate={{ backgroundColor: '#fb7e14' }}
                       transition={{ type: 'tween', duration: 0.25 }}
                     />
                   )}
                 </AnimatePresence>
-                <div className="absolute top-0 bottom-0 right-0 hidden w-1 h-full -z-20 bg-gray-500/50 lg:block" />
-                <div className="absolute bottom-0 left-0 right-0 block w-full h-1 -z-20 bg-white/20 lg:hidden" />
-              </motion.li>
+                <div className="absolute top-0 bottom-0 right-0 -z-20 hidden h-full w-1 bg-gray-500/50 lg:block" />
+                <div className="absolute bottom-0 left-0 right-0 -z-20 block h-1 w-full bg-white/20 lg:hidden" />
+              </m.li>
             ))}
           </LayoutGroup>
         </ul>
@@ -68,7 +68,7 @@ export default function WorkExperience({
       {/* Selected Experience */}
       <div className="flex-1">
         {selectedExperience ? (
-          <motion.article
+          <m.article
             className="flex flex-col px-1 py-4 lg:py-0 lg:px-6"
             initial={false}
             animate={controls}
@@ -79,7 +79,7 @@ export default function WorkExperience({
                   Company
                 </span>
                 <p className="text-xl font-bold text-primary">
-                  <motion.a
+                  <m.a
                     href={selectedExperience.companySite}
                     target="_blank"
                     rel="noreferrer"
@@ -87,7 +87,7 @@ export default function WorkExperience({
                     className="flex items-start font-header hover:text-black dark:hover:text-white"
                   >
                     {selectedExperience.company}
-                  </motion.a>
+                  </m.a>
                 </p>
               </div>
               <div className="">
@@ -132,7 +132,7 @@ export default function WorkExperience({
               <p className="mb-3 text-xl font-semibold text-primary">
                 What I did
               </p>
-              <ul className="ml-4 space-y-2 list-disc marker:text-primary">
+              <ul className="ml-4 list-disc space-y-2 marker:text-primary">
                 {selectedExperience.contents.map((content) => (
                   <li
                     key={content}
@@ -143,13 +143,13 @@ export default function WorkExperience({
                 ))}
               </ul>
             </div>
-          </motion.article>
+          </m.article>
         ) : (
-          <div className="flex items-center justify-center w-full h-full">
+          <div className="flex h-full w-full items-center justify-center">
             Looks like something went wrong
           </div>
         )}
       </div>
-    </motion.div>
+    </m.div>
   );
 }
