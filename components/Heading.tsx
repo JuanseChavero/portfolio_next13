@@ -1,5 +1,5 @@
 import { m, Variants } from 'framer-motion';
-import { textContainer } from '../utils/motion';
+import { textContainer } from '@/utils/motion';
 
 interface HeadingProps {
   title: string;
@@ -10,7 +10,7 @@ interface HeadingProps {
 }
 
 function HeadingDivider() {
-  return <hr className="h-px w-full border-none bg-primary" />;
+  return <hr className="w-full h-px border-none rounded-full bg-primary" />;
 }
 
 export default function Heading({
@@ -25,7 +25,7 @@ export default function Heading({
   const titleIsOnCenter = titleAlignment === 'center';
 
   return (
-    <m.div className="flex w-full items-center gap-4" variants={variants}>
+    <m.div className="flex items-center w-full gap-4" variants={variants}>
       {divider && (titleIsOnCenter || titleIsOnRight) ? (
         <HeadingDivider />
       ) : null}

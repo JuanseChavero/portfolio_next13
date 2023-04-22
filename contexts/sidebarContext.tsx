@@ -2,6 +2,9 @@
 
 import { createContext, useContext, useState } from 'react';
 
+// Currently only being used for animating the
+// sidebar menu button in mobile.
+
 interface SidebarContextProps {
   isOpen: boolean;
   toggle: () => void;

@@ -1,12 +1,10 @@
+import { WithChildren } from '@/types';
+
 export const metadata = {
   title: 'My projects',
   description: 'Take a look at my personal projects.',
 };
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
-
-export default function Layout({ children }: LayoutProps) {
+export default function Layout({ children }: WithChildren) {
   return <>{children}</>;
 }

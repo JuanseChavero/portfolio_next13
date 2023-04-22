@@ -2,18 +2,20 @@
 
 import { AnimatePresence, LayoutGroup, m } from 'framer-motion';
 import { usePathname } from 'next/navigation';
-import { useSidebar } from '../contexts/sidebarContext';
+import { useSidebar } from 'contexts/sidebarContext';
 import Link from 'next/link';
-import Logo from './Logo';
-import ThemeSwitch from './ThemeSwitch';
-import Sidebar from './Sidebar';
+import Logo from '@/components/Logo';
+import ThemeSwitch from '@/components/ThemeSwitch';
+import Sidebar from '@/components/Sidebar';
+import { hrVariant } from '@/utils/motion';
+import AnimatedLine from '@/components/AnimatedLine';
 
-interface NavItemProps {
+interface AppRoute {
   title: string;
   to: string;
 }
 
-export const routes = [
+export const routes: AppRoute[] = [
   { title: 'Overview', to: '/' },
   { title: 'About', to: '/about' },
   { title: 'Skills', to: '/skills' },
@@ -21,13 +23,12 @@ export const routes = [
   { title: 'Contact', to: '/contact' },
 ];
 
-export function NavItem({ title, to }: NavItemProps) {
+export function NavItem({ title, to }: AppRoute) {
   const pathname = usePathname();
   const isActive = pathname === to;
 
   return (
     <Link href={to} className="outline-none" title={title} tabIndex={-1}>
-      {' '}
       <m.div
         tabIndex={0}
         className={`relative w-[7.5rem] rounded border-2 border-primary py-2 text-center font-semibold outline-none transition-colors focus-visible:border-black dark:focus-visible:border-white ${
@@ -40,7 +41,7 @@ export function NavItem({ title, to }: NavItemProps) {
             <m.div
               key={to}
               layoutId="background"
-              className="absolute top-0 left-0 -z-10 h-full w-full"
+              className="absolute top-0 left-0 w-full h-full -z-10"
               initial={false}
               animate={{ backgroundColor: '#fb7e14' }}
               transition={{ type: 'tween', duration: 0.5 }}
@@ -54,14 +55,8 @@ export function NavItem({ title, to }: NavItemProps) {
 
 export default function Navbar() {
   const { isOpen } = useSidebar();
+  const lineVariant = hrVariant({ duration: 3 });
 
-  const hrVariant = {
-    from: 0,
-    delay: 0.3,
-    duration: 3,
-    type: 'tween',
-    ease: 'easeInOut',
-  };
   return (
     <m.header
       className={`z-30 flex w-full justify-center px-6 py-9 xl:px-10`}
@@ -79,12 +74,7 @@ export default function Navbar() {
         <Logo />
 
         {/* Desktop */}
-        <m.hr
-          className="ml-auto h-[2px] rounded-full border-none bg-primary text-end"
-          whileInView={{ width: '100%' }}
-          transition={hrVariant}
-          viewport={{ once: true }}
-        />
+        <AnimatedLine className="ml-auto" variant={lineVariant} />
         <m.ul className="hidden items-center divide-x-[0.5rem] divide-white dark:divide-black lg:flex">
           <LayoutGroup>
             {routes.map((route) => (
@@ -94,11 +84,9 @@ export default function Navbar() {
             ))}
           </LayoutGroup>
         </m.ul>
-        <m.hr
-          className="mr-auto hidden h-[2px] rounded-full border-none bg-primary text-end lg:inline"
-          whileInView={{ width: '100%' }}
-          transition={hrVariant}
-          viewport={{ once: true }}
+        <AnimatedLine
+          className="hidden mr-auto lg:inline"
+          variant={lineVariant}
         />
         <div className="hidden lg:flex">
           <ThemeSwitch />
@@ -106,7 +94,7 @@ export default function Navbar() {
 
         {/* Mobile */}
         <m.div
-          className="flex gap-3 self-center justify-self-center lg:hidden"
+          className="flex self-center gap-3 justify-self-center lg:hidden"
           initial={false}
           animate={isOpen ? 'open' : 'closed'}
         >

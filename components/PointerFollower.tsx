@@ -1,6 +1,6 @@
 import { m } from 'framer-motion';
 import { useRef } from 'react';
-import { useFollowPointer } from '../hooks/useFollowPointer';
+import { useFollowPointer } from 'hooks/useFollowPointer';
 
 export default function PointerFollower() {
   const ref = useRef(null);

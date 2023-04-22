@@ -1,10 +1,10 @@
 'use client';
 
 import { ThemeProvider } from 'next-themes';
-import { ReactNode } from 'react';
-import { SidebarProvider } from '../contexts/sidebarContext';
+import { SidebarProvider } from '@/contexts/sidebarContext';
+import { WithChildren } from '@/types';
 
-export default function Providers({ children }: { children: ReactNode }) {
+export default function Providers({ children }: WithChildren) {
   return (
     <ThemeProvider enableSystem={true} attribute="class">
       <SidebarProvider>{children}</SidebarProvider>

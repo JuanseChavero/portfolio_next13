@@ -35,7 +35,7 @@ export default function NextArrow({ href, content }: NextArrowProps) {
     <m.div initial="idle" whileHover="hover" animate="idle">
       <Link
         href={href}
-        className="flex flex-col items-end justify-end px-3 py-4 outline-2 focus-visible:outline-dashed focus-visible:outline-primary"
+        className="flex flex-col items-end justify-end px-3 py-2 outline-2 focus-visible:outline-dashed focus-visible:outline-primary"
       >
         <m.span
           className="mr-2 text-lg font-medium uppercase text-primary"
@@ -45,7 +45,7 @@ export default function NextArrow({ href, content }: NextArrowProps) {
         </m.span>
         <m.div className="flex items-center justify-end">
           <m.div className="-mr-5 h-[2px] bg-primary" variants={button} />
-          <ChevronRightIcon className="m-0 -mr-3 h-8 w-8 fill-primary" />
+          <ChevronRightIcon className="w-8 h-8 m-0 -mr-3 fill-primary" />
         </m.div>
       </Link>
     </m.div>

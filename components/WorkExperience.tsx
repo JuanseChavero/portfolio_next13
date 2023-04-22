@@ -1,3 +1,4 @@
+import { Experience } from '@/data/experiences';
 import {
   AnimatePresence,
   LayoutGroup,
@@ -6,7 +7,6 @@ import {
   Variants,
 } from 'framer-motion';
 import { useState } from 'react';
-import { Experience } from '../data/experiences';
 
 interface WorkExperienceProps {
   experiences: Experience[];
@@ -31,18 +31,18 @@ export default function WorkExperience({
 
   return (
     <m.div
-      className="container flex max-w-2xl flex-col rounded-md text-start lg:flex-row"
+      className="container flex flex-col max-w-2xl rounded-md text-start lg:flex-row"
       variants={variants}
     >
       {/* Works List */}
       <div className="">
-        <ul className="flex flex-row overflow-x-scroll text-center lg:w-40 lg:flex-col lg:overflow-x-clip">
+        <ul className="flex flex-row overflow-x-scroll text-center scrollbar lg:w-40 lg:flex-col lg:overflow-x-clip">
           <LayoutGroup>
             {experiences.map(({ company }) => (
               <m.li
                 key={company}
                 onClick={() => onClick(company)}
-                className="relative flex-1 cursor-pointer rounded p-4 hover:bg-black/10 dark:hover:bg-white/10"
+                className="relative flex-1 p-4 rounded cursor-pointer hover:bg-black/10 dark:hover:bg-white/10"
               >
                 {company}
                 <AnimatePresence>
@@ -50,15 +50,15 @@ export default function WorkExperience({
                     <m.div
                       key={company}
                       layoutId="company"
-                      className="absolute bottom-0 left-0 right-0 -z-10 h-1 w-full lg:right-0 lg:left-auto lg:h-full lg:w-1"
+                      className="absolute bottom-0 left-0 right-0 w-full h-1 -z-10 lg:left-auto lg:right-0 lg:h-full lg:w-1"
                       initial={false}
                       animate={{ backgroundColor: '#fb7e14' }}
                       transition={{ type: 'tween', duration: 0.25 }}
                     />
                   )}
                 </AnimatePresence>
-                <div className="absolute top-0 bottom-0 right-0 -z-20 hidden h-full w-1 bg-gray-500/50 lg:block" />
-                <div className="absolute bottom-0 left-0 right-0 -z-20 block h-1 w-full bg-white/20 lg:hidden" />
+                <div className="absolute top-0 bottom-0 right-0 hidden w-1 h-full -z-20 bg-gray-500/50 lg:block" />
+                <div className="absolute bottom-0 left-0 right-0 block w-full h-1 -z-20 bg-white/20 lg:hidden" />
               </m.li>
             ))}
           </LayoutGroup>
@@ -69,7 +69,7 @@ export default function WorkExperience({
       <div className="flex-1">
         {selectedExperience ? (
           <m.article
-            className="flex flex-col px-1 py-4 lg:py-0 lg:px-6"
+            className="flex flex-col px-1 py-4 lg:px-6 lg:py-0"
             initial={false}
             animate={controls}
           >
@@ -132,11 +132,11 @@ export default function WorkExperience({
               <p className="mb-3 text-xl font-semibold text-primary">
                 What I did
               </p>
-              <ul className="ml-4 list-disc space-y-2 marker:text-primary">
+              <ul className="ml-4 space-y-2 list-disc marker:text-primary">
                 {selectedExperience.contents.map((content) => (
                   <li
                     key={content}
-                    className="pl-2 text-base text-neutral-500 dark:text-gray-400"
+                    className="pl-2 text-base text-gray-700 dark:text-gray-300"
                   >
                     {content}
                   </li>
@@ -145,7 +145,7 @@ export default function WorkExperience({
             </div>
           </m.article>
         ) : (
-          <div className="flex h-full w-full items-center justify-center">
+          <div className="flex items-center justify-center w-full h-full">
             Looks like something went wrong
           </div>
         )}

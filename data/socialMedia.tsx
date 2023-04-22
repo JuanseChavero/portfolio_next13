@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 import { FaGithub, FaLinkedinIn, FaPortrait } from 'react-icons/fa';
-import my from './personal';
+import { my } from '@/data/personal';
 
 export type SocialMediaIcon = {
   icon: ReactElement;

@@ -2,8 +2,8 @@ import Image from 'next/image';
 import { FiExternalLink } from 'react-icons/fi';
 import { SiGithub } from 'react-icons/si';
 import { Variants, m } from 'framer-motion';
-import { Project } from '../data/projects';
-import Tooltip from './Tooltip';
+import { Project } from '@/data/projects';
+import Tooltip from '@/components/Tooltip';
 
 export default function DisplayProject({
   name,
@@ -66,11 +66,11 @@ export default function DisplayProject({
           >
             <Image
               alt={`${name} screenshot`}
-              className="object-contain"
+              className="object-cover h-full"
               src={image}
               priority
             />
-            <div className="absolute inset-0 h-full w-full bg-primary/30 transition-all group-hover:hidden" />
+            <div className="absolute inset-0 w-full h-full transition-all bg-primary/30 group-hover:hidden" />
           </a>
         </m.div>
 
@@ -95,7 +95,7 @@ export default function DisplayProject({
               className="group"
               aria-label={`Link to ${name} website`}
             >
-              <h3 className="text-start text-2xl font-bold text-primary group-hover:text-black dark:group-hover:text-white">
+              <h3 className="text-2xl font-bold text-start text-primary group-hover:text-black dark:group-hover:text-white">
                 {name}
               </h3>
             </a>
@@ -104,7 +104,7 @@ export default function DisplayProject({
           {/* Description */}
           <m.div
             variants={descriptionVariant}
-            className={`pointer-events-auto flex h-min flex-col gap-2 rounded bg-secondary px-6 py-4 shadow-lg`}
+            className={`pointer-events-auto flex h-min flex-col gap-2 rounded bg-gradient-to-r from-secondary to-orange-500 px-6 py-4 shadow-lg`}
           >
             <span
               className={`${
@@ -116,7 +116,7 @@ export default function DisplayProject({
           </m.div>
 
           {/* Footer */}
-          <div className="flex w-full flex-col gap-4">
+          <div className="flex flex-col w-full gap-4">
             <m.div
               variants={itemVariant}
               className={`pointer-events-auto flex ${
@@ -186,7 +186,7 @@ export default function DisplayProject({
           </div>
           <div className="text-gray-900 dark:text-gray-300">{description}</div>
           {/* Footer */}
-          <div className="mt-4 flex w-full flex-col gap-4">
+          <div className="flex flex-col w-full gap-4 mt-4">
             <div className={`pointer-events-auto`}>
               <ul className="flex flex-wrap gap-3">
                 {technologiesUsed.map((technology) => (

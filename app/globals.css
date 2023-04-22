@@ -29,6 +29,28 @@ body::-webkit-scrollbar-corner {
   background: rgb(15 23 42);
 }
 
+.scrollbar::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+  background: rgb(15 23 42);
+  -webkit-border-radius: 1ex;
+  border-radius: 1ex;
+}
+
+.scrollbar::-webkit-scrollbar:disabled {
+  background: grey;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #fb7e14;
+  -webkit-border-radius: 1ex;
+  border-radius: 1ex;
+}
+
+.scrollbar::-webkit-scrollbar-corner {
+  background: rgb(15 23 42);
+}
+
 html main {
   background-image: radial-gradient(rgb(0, 0, 0, 0.2) 1px, transparent 0);
   background-size: 40px 40px;

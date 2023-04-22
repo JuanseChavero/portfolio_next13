@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, m } from 'framer-motion';
 import { ArrowUpIcon } from '@heroicons/react/20/solid';
-import Tooltip from './Tooltip';
+import Tooltip from '@/components/Tooltip';
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
@@ -43,7 +43,7 @@ export default function ScrollToTop() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed right-5 bottom-5 z-50 hidden lg:block"
+            className="fixed bottom-5 right-5 z-50 hidden lg:block"
           >
             <button
               className="h-16 w-16 rounded-full bg-slate-800 p-4 dark:bg-slate-100"

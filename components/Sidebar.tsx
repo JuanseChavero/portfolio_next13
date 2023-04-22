@@ -5,12 +5,12 @@ import {
   DrawerContent,
   DrawerCloseButton,
 } from '@chakra-ui/modal';
-import { useSidebar } from '../contexts/sidebarContext';
+import { useSidebar } from 'contexts/sidebarContext';
 import { useRef } from 'react';
 import { m } from 'framer-motion';
 import { ChakraProvider } from '@chakra-ui/provider';
 import { theme } from '@chakra-ui/theme';
-import { NavItem, routes } from './Navbar';
+import { NavItem, routes } from '@/components/Navbar';
 
 const Path = (props: any) => (
   <m.path
@@ -26,7 +26,7 @@ const SidebarButton = ({ isOpen }: { isOpen: boolean }) => {
   return (
     <svg
       viewBox="0 0 20 20"
-      className="z-[100] flex h-full w-full flex-col items-center justify-center"
+      className="flex flex-col items-center justify-center w-full h-full"
     >
       <Path
         variants={{
@@ -83,7 +83,7 @@ export default function Sidebar() {
         ref={btnRef}
         onClick={onClickModal}
         aria-label="Sidebar toggler"
-        className="h-12 w-12 rounded border-2 border-primary p-2"
+        className="w-12 h-12 p-2 border-2 rounded border-primary"
       >
         <SidebarButton isOpen={isOpen} />
       </m.button>

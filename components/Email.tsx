@@ -1,10 +1,10 @@
 import { m } from 'framer-motion';
-import my from '../data/personal';
+import { my } from '@/data/personal';
 
 export default function Email() {
   return (
     <m.div
-      className="fixed right-8 hidden h-screen flex-col items-center justify-center gap-6 md:flex xl:right-12"
+      className="fixed flex-col items-center justify-center hidden h-screen gap-6 right-8 md:flex xl:right-12"
       initial={{ opacity: 0, y: 400 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 400 }}
@@ -20,6 +20,7 @@ export default function Email() {
         whileFocus={{ letterSpacing: '0.1em' }}
         aria-label="Link to my email"
         href={`mailto:${my.email}`}
+        title="Email"
       >
         {my.email}
       </m.a>

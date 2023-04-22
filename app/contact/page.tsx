@@ -3,14 +3,13 @@
 import { useRef, useState } from 'react';
 import { AnimatePresence, m } from 'framer-motion';
 import { ArrowPathIcon, CheckCircleIcon } from '@heroicons/react/20/solid';
-import { TextArea, Textfield } from '../../components/Textfield';
-import { containerVariant, itemVariant } from '../../utils/motion';
-import { waysOfContact } from '../../data/contact';
-import ContactCard from '../../components/ContactCard';
-import PageWrapper from '../../components/PageWrapper';
-import Heading from '../../components/Heading';
+import { TextArea, Textfield } from '@/components/Textfield';
+import { containerVariant, itemVariant } from '@/utils/motion';
+import { waysOfContact } from '@/data/contact';
+import ContactCard from '@/components/ContactCard';
+import Heading from '@/components/Heading';
 import emailjs from '@emailjs/browser';
-import useField from '../../hooks/useField';
+import useField from '@/hooks/useField';
 
 export default function Contact() {
   const [name, resetName] = useField('text');
@@ -74,119 +73,116 @@ export default function Contact() {
       },
     },
   };
+
   return (
-    <PageWrapper>
+    <m.div
+      className="container flex flex-col max-w-5xl"
+      variants={containerVariant}
+      initial="hidden"
+      animate="visible"
+    >
+      <Heading title="Contact" variants={itemVariant} />
       <m.div
-        className="container flex max-w-5xl flex-col"
-        variants={containerVariant}
-        initial="hidden"
-        animate="visible"
+        className="mb-6 space-y-2 text-xl text-left lg:text-justify"
+        variants={itemVariant}
       >
-        <Heading title="Contact" variants={itemVariant} />
-        <m.div
-          className="mb-6 space-y-2 text-left text-xl lg:text-justify"
-          variants={itemVariant}
-        >
-          <p>
-            I&apos;m excited to hear about your project and see how I can help
-            bring your ideas to life.
-          </p>
-          <p>
-            Please fill out the contact form and I&apos;ll get back to you as
-            soon as possible.
-          </p>
-        </m.div>
-        <m.form ref={formRef} variants={itemVariant}>
-          <AnimatePresence mode="wait">
-            {sentEmail ? (
+        <p>
+          I&apos;m excited to hear about your project and see how I can help
+          bring your ideas to life.
+        </p>
+        <p>
+          Please fill out the contact form and I&apos;ll get back to you as soon
+          as possible.
+        </p>
+      </m.div>
+      <m.form ref={formRef} variants={itemVariant}>
+        <AnimatePresence mode="wait">
+          {sentEmail ? (
+            <m.div
+              key="message"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className={`flex h-[460px] w-full flex-col items-center justify-center`}
+            >
               <m.div
-                key="message"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                <CheckCircleIcon className="w-24 h-24 fill-green-500" />
+              </m.div>
+              <div className="max-w-sm">
+                <p className="mt-4 text-lg text-center text-green-500">
+                  Thank you for reaching out.
+                </p>
+                <p className="mt-4 text-lg text-center text-green-500">
+                  I have received your message and will get back to you as soon
+                  as possible.
+                </p>
+                <p className="mt-4 text-lg text-center text-green-500">
+                  I appreciate your interest and look forward to discussing your
+                  project with you!
+                </p>
+              </div>
+            </m.div>
+          ) : (
+            <div className="flex flex-col gap-6 lg:flex-row">
+              <m.div
+                key="form"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className={`flex h-[460px] w-full flex-col items-center justify-center`}
+                className="flex flex-col flex-1 w-full gap-5"
               >
-                <m.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ duration: 0.5 }}
+                <Textfield
+                  name="user_name"
+                  placeholder="Your name"
+                  label="Name"
+                  {...name}
+                />
+                <Textfield
+                  name="user_email"
+                  placeholder="Your email address"
+                  label="Email"
+                  {...email}
+                />
+                <TextArea
+                  name="message"
+                  placeholder="What's on your mind?"
+                  label="Message"
+                  {...message}
+                />
+                <m.button
+                  type="button"
+                  aria-label="Submit form"
+                  onClick={onSubmit}
+                  className={`flex h-12 w-full items-center justify-center rounded border-2 border-primary text-center text-lg font-bold uppercase tracking-widest text-primary outline-2 outline-offset-8 outline-primary transition-[background-color,outline-offset,color] hocus:bg-primary hocus:text-black hocus:outline hocus:outline-offset-4 dark:hocus:text-white ${
+                    isSending ? 'cursor-default' : 'cursor-pointer'
+                  }`}
                 >
-                  <CheckCircleIcon className="h-24 w-24 fill-green-500" />
-                </m.div>
-                <div className="max-w-sm">
-                  <p className="mt-4 text-center text-lg text-green-500">
-                    Thank you for reaching out.
-                  </p>
-                  <p className="mt-4 text-center text-lg text-green-500">
-                    I have received your message and will get back to you as
-                    soon as possible.
-                  </p>
-                  <p className="mt-4 text-center text-lg text-green-500">
-                    I appreciate your interest and look forward to discussing
-                    your project with you!
-                  </p>
+                  {isSending ? (
+                    <ArrowPathIcon className="w-8 h-8 animate-spin" />
+                  ) : (
+                    'Submit'
+                  )}
+                </m.button>
+              </m.div>
+              <m.div
+                className="flex flex-col mb-6"
+                variants={contactCardVariant}
+              >
+                <span className="mb-2 text-base">You can also find me at:</span>
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1">
+                  {waysOfContact.map((wayToContact) => (
+                    <ContactCard key={wayToContact.title} {...wayToContact} />
+                  ))}
                 </div>
               </m.div>
-            ) : (
-              <div className="flex flex-col gap-6 lg:flex-row">
-                <m.div
-                  key="form"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  className="flex w-full flex-1 flex-col gap-5"
-                >
-                  <Textfield
-                    name="user_name"
-                    placeholder="Your name"
-                    label="Name"
-                    {...name}
-                  />
-                  <Textfield
-                    name="user_email"
-                    placeholder="Your email address"
-                    label="Email"
-                    {...email}
-                  />
-                  <TextArea
-                    name="message"
-                    placeholder="What's on your mind?"
-                    label="Message"
-                    {...message}
-                  />
-                  <m.button
-                    type="button"
-                    aria-label="Submit form"
-                    onClick={onSubmit}
-                    className={`flex h-12 w-full items-center justify-center rounded border-2 border-primary text-center text-lg font-bold uppercase tracking-widest text-primary outline-2 outline-offset-8 outline-primary transition-[background-color,outline-offset,color] hocus:bg-primary hocus:text-black hocus:outline hocus:outline-offset-4 dark:hocus:text-white ${
-                      isSending ? 'cursor-default' : 'cursor-pointer'
-                    }`}
-                  >
-                    {isSending ? (
-                      <ArrowPathIcon className="h-8 w-8 animate-spin" />
-                    ) : (
-                      'Submit'
-                    )}
-                  </m.button>
-                </m.div>
-                <m.div
-                  className="mb-6 flex flex-col"
-                  variants={contactCardVariant}
-                >
-                  <span className="mb-2 text-base">
-                    You can also find me at:
-                  </span>
-                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1">
-                    {waysOfContact.map((wayToContact) => (
-                      <ContactCard key={wayToContact.title} {...wayToContact} />
-                    ))}
-                  </div>
-                </m.div>
-              </div>
-            )}
-          </AnimatePresence>
-        </m.form>
-      </m.div>
-    </PageWrapper>
+            </div>
+          )}
+        </AnimatePresence>
+      </m.form>
+    </m.div>
   );
 }

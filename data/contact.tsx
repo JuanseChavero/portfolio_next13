@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 import { FaEnvelope, FaLinkedin } from 'react-icons/fa';
-import my from './personal';
+import { my } from '@/data/personal';
 
 export type Contact = {
   icon: ReactElement;

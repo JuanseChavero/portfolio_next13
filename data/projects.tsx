@@ -1,6 +1,6 @@
 import { StaticImageData } from 'next/image';
 import { ReactElement } from 'react';
-import paintShop from '../public/images/projects/paint-shop.png';
+import paintShop from '~/images/projects/paint-shop.png';
 
 export type Project = {
   name: string;
@@ -22,7 +22,7 @@ export const projects: Project[] = [
   //       Reddit, that began as an exercise of the FullStackOpen course.
   //     </p>
   //   ),
-  //   image: '/blog.png',
+  //   image: '',
   //   imageAlignment: 'left',
   //   siteUrl: 'https://pintureria-arcobaleno.netlify.app',
   //   githubUrl:

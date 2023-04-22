@@ -1,6 +1,6 @@
 import { m } from 'framer-motion';
-import { socialMedia, SocialMediaIcon } from '../data/socialMedia';
-import Tooltip from './Tooltip';
+import { socialMedia, SocialMediaIcon } from '@/data/socialMedia';
+import Tooltip from '@/components/Tooltip';
 
 export function SocialMediaIcon({
   icon,
@@ -33,7 +33,7 @@ export function SocialMediaIcon({
 export default function SocialMedia() {
   return (
     <m.div
-      className="fixed left-8 hidden h-screen flex-col items-center justify-center gap-6 md:flex xl:left-12"
+      className="fixed flex-col items-center justify-center hidden h-screen gap-6 left-8 md:flex xl:left-12"
       initial={{ opacity: 0, y: 400 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 400 }}

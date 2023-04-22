@@ -1,6 +1,7 @@
 import { Variants } from 'framer-motion';
 
 type Delay = number | String;
+type Duration = number;
 type StaggerChildren = number;
 type DelayChildren = number;
 
@@ -32,6 +33,14 @@ export const itemVariant: Variants = {
     },
   },
 };
+
+export const hrVariant = ({ duration }: { duration: Duration }) => ({
+  from: 0,
+  delay: 0.3,
+  duration: duration,
+  type: 'tween',
+  ease: 'easeInOut',
+});
 
 export const staggerContainer = (
   staggerChildren: StaggerChildren,

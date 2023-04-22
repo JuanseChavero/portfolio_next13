@@ -1,19 +1,9 @@
-import './globals.css';
+import '@/app/globals.css';
 import { Exo, Exo_2 } from 'next/font/google';
-import Providers from './providers';
-import Layout from './customLayout';
 import { Metadata } from 'next';
-
-const font = Exo_2({
-  variable: '--font-global',
-  display: 'swap',
-});
-
-const headerFont = Exo({
-  variable: '--font-header',
-  weight: ['400', '500', '600', '700', '800'],
-  display: 'swap',
-});
+import { WithChildren } from '@/types';
+import Providers from '@/app/providers';
+import Layout from '@/app/customLayout';
 
 export const metadata: Metadata = {
   title: {
@@ -43,15 +33,27 @@ export const metadata: Metadata = {
   icons: '/favicon.ico',
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+const mainFont = Exo_2({
+  variable: '--font-global',
+  display: 'swap',
+  subsets: ['latin'],
+});
+
+const headerFont = Exo({
+  variable: '--font-header',
+  weight: ['400', '500', '600', '700', '800'],
+  display: 'swap',
+  subsets: ['latin'],
+});
+
+export default function RootLayout({ children }: WithChildren) {
   return (
-    <html lang="en" className={font.variable} suppressHydrationWarning>
-      <head />
-      <body className={headerFont.variable}>
+    <html
+      lang="en"
+      className={`${mainFont.variable} ${headerFont.variable}`}
+      suppressHydrationWarning
+    >
+      <body>
         <Providers>
           <Layout>{children}</Layout>
         </Providers>
