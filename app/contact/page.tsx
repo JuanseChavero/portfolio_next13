@@ -1,20 +1,20 @@
-'use client';
+"use client";
 
-import { useRef, useState } from 'react';
-import { AnimatePresence, m } from 'framer-motion';
-import { ArrowPathIcon, CheckCircleIcon } from '@heroicons/react/20/solid';
-import { TextArea, Textfield } from '@/components/Textfield';
-import { containerVariant, itemVariant } from '@/utils/motion';
-import { waysOfContact } from '@/data/contact';
-import ContactCard from '@/components/ContactCard';
-import Heading from '@/components/Heading';
-import emailjs from '@emailjs/browser';
-import useField from '@/hooks/useField';
+import { useRef, useState } from "react";
+import { AnimatePresence, m } from "framer-motion";
+import { ArrowPathIcon, CheckCircleIcon } from "@heroicons/react/20/solid";
+import { TextArea, Textfield } from "@/components/Textfield";
+import { containerVariant, itemVariant } from "@/utils/motion";
+import { waysOfContact } from "@/data/contact";
+import ContactCard from "@/components/ContactCard";
+import Heading from "@/components/Heading";
+import emailjs from "@emailjs/browser";
+import useField from "@/hooks/useField";
 
 export default function Contact() {
-  const [name, resetName] = useField('text');
-  const [email, resetEmail] = useField('email');
-  const [message, resetMessage] = useField('text');
+  const [name, resetName] = useField("text");
+  const [email, resetEmail] = useField("email");
+  const [message, resetMessage] = useField("text");
   const [isSending, setIsSending] = useState(false);
   const [sentEmail, setSentEmail] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
@@ -40,10 +40,10 @@ export default function Contact() {
       setIsSending(true);
       // Send the email through "EmailJS" using a ref and credentials
       await emailjs.sendForm(
-        'service_ru8yprc',
-        'contact_form',
+        "service_ru8yprc",
+        "contact_form",
         formRef.current,
-        '9Guo4FsNB3WvWTb9h',
+        "9Guo4FsNB3WvWTb9h"
       );
 
       setIsSending(false);
@@ -68,7 +68,7 @@ export default function Contact() {
       x: 0,
       transition: {
         duration: 1.35,
-        type: 'spring',
+        type: "spring",
         bounce: 0,
       },
     },
@@ -86,14 +86,16 @@ export default function Contact() {
         className="mb-6 space-y-2 text-xl text-left lg:text-justify"
         variants={itemVariant}
       >
-        <p>
-          I&apos;m excited to hear about your project and see how I can help
-          bring your ideas to life.
-        </p>
-        <p>
-          Please fill out the contact form and I&apos;ll get back to you as soon
-          as possible.
-        </p>
+        <div className="text-xl">
+          <p className="mb-4">
+            <span className="font-bold text-secondary">STATUS:</span>
+            &nbsp; I am currently not actively seeking new job opportunities.
+          </p>
+          <p>
+            However, please feel free to contact me should you have any
+            questions or opportunities you would like to discuss.{" "}
+          </p>
+        </div>
       </m.div>
       <m.form ref={formRef} variants={itemVariant}>
         <AnimatePresence mode="wait">
@@ -158,13 +160,13 @@ export default function Contact() {
                   aria-label="Submit form"
                   onClick={onSubmit}
                   className={`flex h-12 w-full items-center justify-center rounded border-2 border-primary text-center text-lg font-bold uppercase tracking-widest text-primary outline-2 outline-offset-8 outline-primary transition-[background-color,outline-offset,color] hocus:bg-primary hocus:text-black hocus:outline hocus:outline-offset-4 dark:hocus:text-white ${
-                    isSending ? 'cursor-default' : 'cursor-pointer'
+                    isSending ? "cursor-default" : "cursor-pointer"
                   }`}
                 >
                   {isSending ? (
                     <ArrowPathIcon className="w-8 h-8 animate-spin" />
                   ) : (
-                    'Submit'
+                    "Submit"
                   )}
                 </m.button>
               </m.div>
