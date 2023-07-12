@@ -1,12 +1,12 @@
-import { Experience } from '@/data/experiences';
+import { Experience } from "@/data/experiences";
 import {
   AnimatePresence,
   LayoutGroup,
   m,
   useAnimationControls,
   Variants,
-} from 'framer-motion';
-import { useState } from 'react';
+} from "framer-motion";
+import { useState } from "react";
 
 interface WorkExperienceProps {
   experiences: Experience[];
@@ -20,7 +20,7 @@ export default function WorkExperience({
   const [active, setActive] = useState(experiences[0].company);
   const controls = useAnimationControls();
   const selectedExperience = experiences.find(
-    (experience) => experience.company === active,
+    (experience) => experience.company === active
   );
 
   const onClick = async (company: string) => {
@@ -52,8 +52,8 @@ export default function WorkExperience({
                       layoutId="company"
                       className="absolute bottom-0 left-0 right-0 w-full h-1 -z-10 lg:left-auto lg:right-0 lg:h-full lg:w-1"
                       initial={false}
-                      animate={{ backgroundColor: '#fb7e14' }}
-                      transition={{ type: 'tween', duration: 0.25 }}
+                      animate={{ backgroundColor: "#fb7e14" }}
+                      transition={{ type: "tween", duration: 0.25 }}
                     />
                   )}
                 </AnimatePresence>
@@ -72,6 +72,7 @@ export default function WorkExperience({
             className="flex flex-col px-1 py-4 lg:px-6 lg:py-0"
             initial={false}
             animate={controls}
+            transition={{ opacity: { duration: 0.2 } }}
           >
             <div className="flex items-start gap-6 pb-3">
               <div className="">
@@ -100,8 +101,8 @@ export default function WorkExperience({
               </div>
             </div>
 
-            <div className="flex flex-wrap items-start gap-2">
-              <div className="w-32">
+            <div className="flex flex-wrap items-start gap-6">
+              <div className="w-auto">
                 <span className="text-sm text-gray-500 dark:text-gray-400">
                   Role
                 </span>
@@ -110,27 +111,29 @@ export default function WorkExperience({
                 </p>
               </div>
 
-              <div className="w-20">
+              <div className="w-auto">
                 <span className="text-sm text-gray-500 dark:text-gray-400">
                   Modality
                 </span>
                 <p className="text-base font-medium text-gray-700 dark:text-gray-300">
-                  {selectedExperience.modality ?? '-'}
+                  {selectedExperience.modality ?? "-"}
                 </p>
               </div>
 
-              <div className="w-20">
+              <div className="w-auto">
                 <span className="text-sm text-gray-500 dark:text-gray-400">
                   Workload
                 </span>
                 <p className="text-base font-medium text-gray-700 dark:text-gray-300">
-                  {selectedExperience.time ?? '-'}
+                  {selectedExperience.time ?? "-"}
                 </p>
               </div>
             </div>
             <div className="mt-4">
               <p className="mb-3 text-xl font-semibold text-primary">
-                What I did
+                {selectedExperience.endDate === "Today"
+                  ? "What I'm doing"
+                  : "What I did"}
               </p>
               <ul className="ml-4 space-y-2 list-disc marker:text-primary">
                 {selectedExperience.contents.map((content) => (
