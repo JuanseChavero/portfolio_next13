@@ -92,8 +92,8 @@ export default function Contact() {
             &nbsp; I am currently not actively seeking new job opportunities.
           </p>
           <p>
-            However, please feel free to contact me should you have any
-            questions or opportunities you would like to discuss.{" "}
+            However, I&apos;m always interested in hearing new oportunitties, so
+            please feel free to reach out anytime.{" "}
           </p>
         </div>
       </m.div>
