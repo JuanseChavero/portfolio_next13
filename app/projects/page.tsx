@@ -1,15 +1,11 @@
 "use client";
 
 import { m } from "framer-motion";
-import { SiGithub } from "react-icons/si";
 import { containerVariant, itemVariant } from "@/utils/motion";
-import { my } from "@/data/personal";
 import { projects } from "@/data/projects";
 import Heading from "@/components/Heading";
 import NextArrow from "@/components/NextArrow";
 import DisplayProject from "@/components/Project";
-import ShadowButton from "@/components/ShadowButton";
-import Tooltip from "@/components/Tooltip";
 
 export default function Projects() {
   return (

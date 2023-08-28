@@ -1,90 +1,84 @@
-import { ReactElement } from 'react';
+import { ReactElement } from "react";
 import {
   SiTypescript,
   SiFlutter,
   SiNextdotjs,
   SiNodedotjs,
   SiReact,
-  SiJavascript,
-  SiExpress,
   SiGraphql,
   SiMongodb,
   SiMysql,
-  SiDart,
   SiCypress,
-  SiBootstrap,
   SiRedux,
-  SiTailwindcss,
   SiJest,
-  SiMaterialdesign,
-} from 'react-icons/si';
+} from "react-icons/si";
 
 export type Skill = {
   title: string;
   icon: ReactElement;
-  type?: 'web' | 'mobile' | 'backend' | 'tool' | 'testing';
+  type?: "web" | "mobile" | "backend" | "tool" | "testing";
 };
 
-const iconStyle = 'w-20 h-20 transition-colors duration-500';
+const iconStyle = "w-20 h-20 transition-colors duration-500";
 
 export const skills: Skill[] = [
   {
-    title: 'React',
+    title: "React",
     icon: <SiReact className={`${iconStyle} group-hover:fill-sky-500`} />,
-    type: 'web',
+    type: "web",
   },
   {
-    title: 'Node.JS',
+    title: "Node.JS",
     icon: <SiNodedotjs className={`${iconStyle} group-hover:fill-lime-500`} />,
-    type: 'backend',
+    type: "backend",
   },
   {
-    title: 'MongoDB',
+    title: "MongoDB",
     icon: <SiMongodb className={`${iconStyle} group-hover:fill-lime-600`} />,
-    type: 'backend',
+    type: "backend",
   },
   {
-    title: 'Flutter',
+    title: "Flutter",
     icon: <SiFlutter className={`${iconStyle} group-hover:fill-sky-500`} />,
-    type: 'mobile',
+    type: "mobile",
   },
   {
-    title: 'Next.JS',
+    title: "Next.JS",
     icon: <SiNextdotjs className={iconStyle} />,
-    type: 'web',
+    type: "web",
   },
   {
-    title: 'GraphQL',
+    title: "GraphQL",
     icon: <SiGraphql className={`${iconStyle} group-hover:fill-pink-500`} />,
-    type: 'backend',
+    type: "backend",
   },
   {
-    title: 'Typescript',
+    title: "Typescript",
     icon: <SiTypescript className={`${iconStyle} group-hover:fill-sky-600`} />,
   },
   {
-    title: 'React Native',
+    title: "React Native",
     icon: <SiReact className={`${iconStyle} group-hover:fill-cyan-500`} />,
-    type: 'mobile',
+    type: "mobile",
   },
   {
-    title: 'MySQL',
+    title: "MySQL",
     icon: <SiMysql className={`${iconStyle} group-hover:fill-cyan-700`} />,
-    type: 'backend',
+    type: "backend",
   },
   {
-    title: 'Cypress',
+    title: "Cypress",
     icon: <SiCypress className={`${iconStyle}`} />,
-    type: 'testing',
+    type: "testing",
   },
   {
-    title: 'Jest',
+    title: "Jest",
     icon: <SiJest className={`${iconStyle} group-hover:fill-red-500`} />,
-    type: 'testing',
+    type: "testing",
   },
   {
-    title: 'Redux',
+    title: "Redux",
     icon: <SiRedux className={`${iconStyle} group-hover:fill-purple-600`} />,
-    type: 'web',
+    type: "web",
   },
 ];

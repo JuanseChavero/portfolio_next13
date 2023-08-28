@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { AnimatePresence, m } from 'framer-motion';
-import { ArrowUpIcon } from '@heroicons/react/20/solid';
-import Tooltip from '@/components/Tooltip';
+import { useEffect, useState } from "react";
+import { AnimatePresence, m } from "framer-motion";
+import { ArrowUpIcon } from "@heroicons/react/20/solid";
+import Tooltip from "@/components/Tooltip";
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
@@ -26,12 +26,12 @@ export default function ScrollToTop() {
 
   if (!mounted) return null;
 
-  window.addEventListener('scroll', toggleVisible);
+  window.addEventListener("scroll", toggleVisible);
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 
@@ -43,10 +43,10 @@ export default function ScrollToTop() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed bottom-5 right-5 z-50 hidden lg:block"
+            className="fixed z-50 hidden bottom-5 right-5 lg:block"
           >
             <button
-              className="h-16 w-16 rounded-full bg-slate-800 p-4 dark:bg-slate-100"
+              className="w-16 h-16 p-4 rounded-full bg-slate-800 dark:bg-slate-100"
               type="button"
               aria-label="Scroll to top"
               onClick={scrollToTop}

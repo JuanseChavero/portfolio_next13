@@ -1,4 +1,4 @@
-import { Variants } from 'framer-motion';
+import { Variants } from "framer-motion";
 
 type Delay = number | String;
 type Duration = number;
@@ -27,7 +27,7 @@ export const itemVariant: Variants = {
     y: 0,
     transition: {
       y: {
-        type: 'spring',
+        type: "spring",
         bounce: 0,
       },
     },
@@ -38,13 +38,13 @@ export const hrVariant = ({ duration }: { duration: Duration }) => ({
   from: 0,
   delay: 0.3,
   duration: duration,
-  type: 'tween',
-  ease: 'easeInOut',
+  type: "tween",
+  ease: "easeInOut",
 });
 
 export const staggerContainer = (
   staggerChildren: StaggerChildren,
-  delayChildren: DelayChildren,
+  delayChildren: DelayChildren
 ) => ({
   hidden: {},
   show: {
@@ -64,7 +64,7 @@ export const textVariant = (delay: Delay) => ({
     y: 0,
     opacity: 1,
     transition: {
-      type: 'spring',
+      type: "spring",
       duration: 1.25,
       delay,
     },
@@ -90,8 +90,8 @@ export const textVariant2: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      type: 'tween',
-      ease: 'easeIn',
+      type: "tween",
+      ease: "easeIn",
     },
   },
 };

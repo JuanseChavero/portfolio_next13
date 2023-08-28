@@ -1,12 +1,12 @@
-import { m } from 'framer-motion';
-import { socialMedia, SocialMediaIcon } from '@/data/socialMedia';
-import Tooltip from '@/components/Tooltip';
+import { m } from "framer-motion";
+import { socialMedia, SocialMediaIcon } from "@/data/socialMedia";
+import Tooltip from "@/components/Tooltip";
 
 export function SocialMediaIcon({
   icon,
   title,
   href,
-  tooltipSide = 'right',
+  tooltipSide = "right",
   sideOffset = 10,
 }: SocialMediaIcon) {
   return (
@@ -38,7 +38,7 @@ export default function SocialMedia() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 400 }}
       transition={{
-        y: { type: 'spring', bounce: 0, duration: 1.5, delay: 1.25 },
+        y: { type: "spring", bounce: 0, duration: 1.5, delay: 1.25 },
       }}
     >
       <m.div className="h-full" />

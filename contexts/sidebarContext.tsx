@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState } from "react";
 
 // Currently only being used for animating the
 // sidebar menu button in mobile.

@@ -4,13 +4,13 @@ import {
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
-} from '@chakra-ui/modal';
-import { useSidebar } from 'contexts/sidebarContext';
-import { useRef } from 'react';
-import { m } from 'framer-motion';
-import { ChakraProvider } from '@chakra-ui/provider';
-import { theme } from '@chakra-ui/theme';
-import { NavItem, routes } from '@/components/Navbar';
+} from "@chakra-ui/modal";
+import { useSidebar } from "contexts/sidebarContext";
+import { useRef } from "react";
+import { m } from "framer-motion";
+import { ChakraProvider } from "@chakra-ui/provider";
+import { theme } from "@chakra-ui/theme";
+import { NavItem, routes } from "@/components/Navbar";
 
 const Path = (props: any) => (
   <m.path
@@ -30,11 +30,11 @@ const SidebarButton = ({ isOpen }: { isOpen: boolean }) => {
     >
       <Path
         variants={{
-          closed: { d: 'M 2 2.5 L 20 2.5' },
-          open: { d: 'M 3 16.5 L 17 2.5' },
+          closed: { d: "M 2 2.5 L 20 2.5" },
+          open: { d: "M 3 16.5 L 17 2.5" },
         }}
         className={
-          isOpen ? 'fill-white stroke-white' : 'fill-primary stroke-primary'
+          isOpen ? "fill-white stroke-white" : "fill-primary stroke-primary"
         }
       />
       <Path
@@ -48,11 +48,11 @@ const SidebarButton = ({ isOpen }: { isOpen: boolean }) => {
       />
       <Path
         variants={{
-          closed: { d: 'M 2 16.346 L 20 16.346' },
-          open: { d: 'M 3 2.5 L 17 16.346' },
+          closed: { d: "M 2 16.346 L 20 16.346" },
+          open: { d: "M 3 2.5 L 17 16.346" },
         }}
         className={
-          isOpen ? 'fill-white stroke-white' : 'fill-primary stroke-primary'
+          isOpen ? "fill-white stroke-white" : "fill-primary stroke-primary"
         }
       />
     </svg>
@@ -94,7 +94,7 @@ export default function Sidebar() {
         finalFocusRef={btnRef}
       >
         <DrawerOverlay />
-        <DrawerContent style={{ background: '#fb7e14' }}>
+        <DrawerContent style={{ background: "#fb7e14" }}>
           <DrawerCloseButton
             style={{
               marginTop: 30,
@@ -104,11 +104,11 @@ export default function Sidebar() {
           />
           <DrawerBody
             style={{
-              display: 'flex',
-              flexDirection: 'column',
+              display: "flex",
+              flexDirection: "column",
               gap: 4,
-              justifyContent: 'center',
-              alignItems: 'center',
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
             <ul className="flex flex-col gap-4">

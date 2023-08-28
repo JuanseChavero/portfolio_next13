@@ -1,6 +1,6 @@
-import { ChevronRightIcon } from '@heroicons/react/20/solid';
-import { m } from 'framer-motion';
-import Link from 'next/link';
+import { ChevronRightIcon } from "@heroicons/react/20/solid";
+import { m } from "framer-motion";
+import Link from "next/link";
 
 interface NextArrowProps {
   href: string;
@@ -14,7 +14,7 @@ export default function NextArrow({ href, content }: NextArrowProps) {
       width: 300,
       transition: {
         width: {
-          type: 'spring',
+          type: "spring",
           bounce: 0,
         },
       },
@@ -22,9 +22,9 @@ export default function NextArrow({ href, content }: NextArrowProps) {
   };
 
   const buttonText = {
-    idle: { letterSpacing: '0.025em' },
+    idle: { letterSpacing: "0.025em" },
     hover: {
-      letterSpacing: '0.2em',
+      letterSpacing: "0.2em",
       transition: {
         transition: 0.25,
       },

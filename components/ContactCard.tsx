@@ -1,5 +1,5 @@
-import { m } from 'framer-motion';
-import { Contact } from '@/data/contact';
+import { m } from "framer-motion";
+import { Contact } from "@/data/contact";
 
 export default function ContactCard(wayToContact: Contact) {
   return (

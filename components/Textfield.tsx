@@ -1,4 +1,4 @@
-import { InputHTMLAttributes, ReactNode, TextareaHTMLAttributes } from 'react';
+import { InputHTMLAttributes, ReactNode, TextareaHTMLAttributes } from "react";
 
 interface FieldProps {
   label: string;
@@ -9,7 +9,7 @@ interface FormGroupProps extends FieldProps {
 }
 
 const fieldStyle =
-  'text-md w-full rounded-md bg-gray-500 hover:brightness-[1.05] dark:hover:brightness-[0.9] p-3 transition-[outline] text-white placeholder-gray-300 outline-none outline-transparent outline-[3px] focus:outline focus:outline-offset-4 focus:outline-primary dark:bg-neutral-100 dark:text-black dark:placeholder-slate-400';
+  "text-md w-full rounded-md bg-gray-500 hover:brightness-[1.05] dark:hover:brightness-[0.9] p-3 transition-[outline] text-white placeholder-gray-300 outline-none outline-transparent outline-[3px] focus:outline focus:outline-offset-4 focus:outline-primary dark:bg-neutral-100 dark:text-black dark:placeholder-slate-400";
 
 function FormGroup({ label, children }: FormGroupProps) {
   return (

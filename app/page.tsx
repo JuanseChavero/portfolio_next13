@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { m } from 'framer-motion';
-import { my } from '@/data/personal';
-import NextArrow from '@/components/NextArrow';
+import { m } from "framer-motion";
+import { my } from "@/data/personal";
+import NextArrow from "@/components/NextArrow";
 
 export default function Home() {
   const container = {
@@ -27,7 +27,7 @@ export default function Home() {
       x: 0,
       transition: {
         x: {
-          type: 'spring',
+          type: "spring",
           bounce: 0,
         },
       },
@@ -44,7 +44,7 @@ export default function Home() {
       <div>
         <m.span className="text-2xl text-gray-400" variants={item}>
           Hello there!
-        </m.span>{' '}
+        </m.span>{" "}
         <m.span className="text-2xl text-gray-400" variants={item}>
           My name is
         </m.span>

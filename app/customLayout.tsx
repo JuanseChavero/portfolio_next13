@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { domAnimation, LazyMotion } from 'framer-motion';
-import Email from '@/components/Email';
-import Footer from '@/components/Footer';
-import Navbar from '@/components/Navbar';
-import PageWrapper from '@/components/PageWrapper';
-import ScrollToTop from '@/components/ScrollToTop';
-import SocialMedia from '@/components/SocialMedia';
-import { WithChildren } from '@/types';
+import { domAnimation, LazyMotion } from "framer-motion";
+import Email from "@/components/Email";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import PageWrapper from "@/components/PageWrapper";
+import ScrollToTop from "@/components/ScrollToTop";
+import SocialMedia from "@/components/SocialMedia";
+import { WithChildren } from "@/types";
 
 export default function Layout({ children }: WithChildren) {
   return (

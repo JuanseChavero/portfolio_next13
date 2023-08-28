@@ -1,9 +1,9 @@
-import Image from 'next/image';
-import { FiExternalLink } from 'react-icons/fi';
-import { SiGithub } from 'react-icons/si';
-import { Variants, m } from 'framer-motion';
-import { Project } from '@/data/projects';
-import Tooltip from '@/components/Tooltip';
+import Image from "next/image";
+import { FiExternalLink } from "react-icons/fi";
+import { SiGithub } from "react-icons/si";
+import { Variants, m } from "framer-motion";
+import { Project } from "@/data/projects";
+import Tooltip from "@/components/Tooltip";
 
 export default function DisplayProject({
   name,
@@ -14,7 +14,7 @@ export default function DisplayProject({
   githubUrl,
   technologiesUsed,
 }: Project) {
-  const alignmentIsLeft = imageAlignment === 'left';
+  const alignmentIsLeft = imageAlignment === "left";
 
   const imageVariant: Variants = {
     hidden: {
@@ -26,7 +26,7 @@ export default function DisplayProject({
       x: 0,
       transition: {
         duration: 1,
-        x: { type: 'spring', duration: 2, bounce: 0 },
+        x: { type: "spring", duration: 2, bounce: 0 },
       },
     },
   };
@@ -35,7 +35,7 @@ export default function DisplayProject({
     hidden: { scale: 0 },
     visible: {
       scale: 1,
-      transition: { duration: 1.25, type: 'spring', bounce: 0 },
+      transition: { duration: 1.25, type: "spring", bounce: 0 },
     },
   };
 
@@ -48,7 +48,7 @@ export default function DisplayProject({
     <>
       <m.div
         className={`relative hidden h-[20rem] w-full items-center lg:flex ${
-          alignmentIsLeft ? 'justify-start' : 'justify-end'
+          alignmentIsLeft ? "justify-start" : "justify-end"
         }`}
         initial="hidden"
         animate="visible"
@@ -77,13 +77,13 @@ export default function DisplayProject({
         {/* Project Description */}
         <div
           className={`pointer-events-none absolute z-10 flex h-full w-2/4 flex-col justify-center gap-4 ${
-            alignmentIsLeft ? 'right-0 items-end' : 'left-0'
+            alignmentIsLeft ? "right-0 items-end" : "left-0"
           }`}
         >
           {/* Title */}
           <m.div
             className={`pointer-events-auto flex w-max flex-col ${
-              alignmentIsLeft ? 'text-end' : 'text-start'
+              alignmentIsLeft ? "text-end" : "text-start"
             }`}
             variants={itemVariant}
           >
@@ -108,7 +108,7 @@ export default function DisplayProject({
           >
             <span
               className={`${
-                alignmentIsLeft ? 'text-end' : 'text-start'
+                alignmentIsLeft ? "text-end" : "text-start"
               } font-semibold text-white`}
             >
               {description}
@@ -120,7 +120,7 @@ export default function DisplayProject({
             <m.div
               variants={itemVariant}
               className={`pointer-events-auto flex ${
-                alignmentIsLeft ? 'justify-end' : 'justify-start'
+                alignmentIsLeft ? "justify-end" : "justify-start"
               }`}
             >
               <ul className="flex gap-3">
@@ -137,7 +137,7 @@ export default function DisplayProject({
             <m.div
               variants={itemVariant}
               className={`pointer-events-auto flex items-center gap-4 ${
-                alignmentIsLeft ? 'justify-end' : 'justify-start'
+                alignmentIsLeft ? "justify-end" : "justify-start"
               }`}
             >
               <Tooltip content="Github repository" side="bottom">

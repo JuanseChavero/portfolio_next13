@@ -1,6 +1,6 @@
-import { ReactElement } from 'react';
-import { FaEnvelope, FaLinkedin } from 'react-icons/fa';
-import { my } from '@/data/personal';
+import { ReactElement } from "react";
+import { FaEnvelope, FaLinkedin } from "react-icons/fa";
+import { my } from "@/data/personal";
 
 export type Contact = {
   icon: ReactElement;
@@ -10,21 +10,21 @@ export type Contact = {
   linkContent: string;
 };
 
-const iconStyle = 'h-8 w-8';
+const iconStyle = "h-8 w-8";
 
 export const waysOfContact: Contact[] = [
   {
     icon: <FaLinkedin className={iconStyle} />,
-    title: 'Linkedin',
+    title: "Linkedin",
     content: my.name,
     href: my.linkedin,
-    linkContent: 'Chat with me',
+    linkContent: "Chat with me",
   },
   {
     icon: <FaEnvelope className={iconStyle} />,
-    title: 'Email',
+    title: "Email",
     content: my.email,
     href: `mailto:${my.email}`,
-    linkContent: 'Send me a message',
+    linkContent: "Send me a message",
   },
 ];

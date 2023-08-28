@@ -1,5 +1,5 @@
-import { m } from 'framer-motion';
-import { Skill } from '@/data/skills';
+import { m } from "framer-motion";
+import { Skill } from "@/data/skills";
 
 export default function SkillCard({ title, icon }: Skill) {
   return (

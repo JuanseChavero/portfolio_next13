@@ -1,12 +1,12 @@
-import { m, Variants } from 'framer-motion';
-import { textContainer } from '@/utils/motion';
+import { m, Variants } from "framer-motion";
+import { textContainer } from "@/utils/motion";
 
 interface HeadingProps {
   title: string;
   variants: Variants;
-  titleAlignment?: 'left' | 'center' | 'right';
+  titleAlignment?: "left" | "center" | "right";
   divider?: boolean;
-  titleSize?: 'normal' | 'small';
+  titleSize?: "normal" | "small";
 }
 
 function HeadingDivider() {
@@ -16,13 +16,13 @@ function HeadingDivider() {
 export default function Heading({
   title,
   variants,
-  titleAlignment = 'left',
-  titleSize = 'normal',
+  titleAlignment = "left",
+  titleSize = "normal",
   divider = true,
 }: HeadingProps) {
-  const titleIsOnLeft = titleAlignment === 'left';
-  const titleIsOnRight = titleAlignment === 'right';
-  const titleIsOnCenter = titleAlignment === 'center';
+  const titleIsOnLeft = titleAlignment === "left";
+  const titleIsOnRight = titleAlignment === "right";
+  const titleIsOnCenter = titleAlignment === "center";
 
   return (
     <m.div className="flex items-center w-full gap-4" variants={variants}>
@@ -32,7 +32,7 @@ export default function Heading({
       <m.h2
         variants={textContainer}
         className={`my-4 font-header ${
-          titleSize === 'normal' ? 'text-4xl' : 'text-3xl'
+          titleSize === "normal" ? "text-4xl" : "text-3xl"
         } font-bold tracking-wider text-primary sm:whitespace-nowrap`}
       >
         {title}

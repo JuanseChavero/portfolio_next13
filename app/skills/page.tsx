@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { m } from 'framer-motion';
-import NextArrow from '@/components/NextArrow';
-import Heading from '@/components/Heading';
-import SkillCard from '@/components/SkillCard';
-import { containerVariant, itemVariant } from '@/utils/motion';
-import { skills } from '@/data/skills';
+import { m } from "framer-motion";
+import NextArrow from "@/components/NextArrow";
+import Heading from "@/components/Heading";
+import SkillCard from "@/components/SkillCard";
+import { containerVariant, itemVariant } from "@/utils/motion";
+import { skills } from "@/data/skills";
 
 export default function Skills() {
   return (

@@ -1,12 +1,12 @@
-import { StaticImageData } from 'next/image';
-import { ReactElement } from 'react';
-import paintShop from '~/images/projects/paint-shop.png';
+import { StaticImageData } from "next/image";
+import { ReactElement } from "react";
+import paintShop from "~/images/projects/paint-shop.png";
 
 export type Project = {
   name: string;
   description: ReactElement;
   image: string | StaticImageData;
-  imageAlignment: 'left' | 'right';
+  imageAlignment: "left" | "right";
   siteUrl: string;
   githubUrl: string;
   technologiesUsed: string[];
@@ -30,7 +30,7 @@ export const projects: Project[] = [
   //   technologiesUsed: ['React', 'Redux', 'Node.js', 'Express', 'MongoDB'],
   // },
   {
-    name: 'Paint Shop App',
+    name: "Paint Shop App",
     description: (
       <p>
         One of the final projects of my carrer was based on a paint shop in my
@@ -40,9 +40,9 @@ export const projects: Project[] = [
       </p>
     ),
     image: paintShop,
-    imageAlignment: 'right',
-    siteUrl: 'https://pintureria-arcobaleno.netlify.app',
-    githubUrl: 'https://github.com/JuanseChavero/pintureria_arcobaleno-web',
-    technologiesUsed: ['React', 'Bootstrap'],
+    imageAlignment: "right",
+    siteUrl: "https://pintureria-arcobaleno.netlify.app",
+    githubUrl: "https://github.com/JuanseChavero/pintureria_arcobaleno-web",
+    technologiesUsed: ["React", "Bootstrap"],
   },
 ];

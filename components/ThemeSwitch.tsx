@@ -1,7 +1,7 @@
-import { useTheme } from 'next-themes';
-import { SunIcon, MoonIcon } from '@heroicons/react/20/solid';
-import { m } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useTheme } from "next-themes";
+import { SunIcon, MoonIcon } from "@heroicons/react/20/solid";
+import { m } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export default function ThemeSwitch() {
   const [mounted, setMounted] = useState(false);
@@ -12,34 +12,34 @@ export default function ThemeSwitch() {
   }, []);
 
   if (!mounted) {
-    return <div className="h-6 w-6 rounded border-2 border-primary"></div>;
+    return <div className="w-6 h-6 border-2 rounded border-primary"></div>;
   }
 
-  const currentTheme = theme === 'system' ? systemTheme : theme;
-  const currentThemeIsDark = currentTheme === 'dark';
+  const currentTheme = theme === "system" ? systemTheme : theme;
+  const currentThemeIsDark = currentTheme === "dark";
 
   const switchTheme = () => {
     if (currentThemeIsDark) {
-      setTheme('light');
+      setTheme("light");
     } else {
-      setTheme('dark');
+      setTheme("dark");
     }
   };
 
   const item = {
     rest: {
-      transform: 'rotate(360deg)',
-      transition: { duration: 0.5, type: 'spring' },
+      transform: "rotate(360deg)",
+      transition: { duration: 0.5, type: "spring" },
     },
     tap: {
-      transform: 'rotate(0deg)',
+      transform: "rotate(0deg)",
       transition: { duration: 0.25 },
     },
   };
 
   return (
     <m.button
-      className="flex cursor-pointer items-center justify-center rounded border-2 border-primary p-2 outline-none hover:bg-primary/20 focus-visible:border-black dark:focus-visible:border-white"
+      className="flex items-center justify-center p-2 border-2 rounded outline-none cursor-pointer border-primary hover:bg-primary/20 focus-visible:border-black dark:focus-visible:border-white"
       data-is-darkmode={currentThemeIsDark}
       onClick={switchTheme}
       tabIndex={0}
@@ -48,7 +48,7 @@ export default function ThemeSwitch() {
       animate="rest"
       aria-label="Color theme toggler"
     >
-      <m.div variants={item} className="h-6 w-6">
+      <m.div variants={item} className="w-6 h-6">
         {!currentThemeIsDark ? (
           <SunIcon className="fill-primary stroke-primary stroke-[0.5px]" />
         ) : (

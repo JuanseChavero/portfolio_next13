@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import { AnimatePresence, LayoutGroup, m } from 'framer-motion';
-import { usePathname } from 'next/navigation';
-import { useSidebar } from 'contexts/sidebarContext';
-import Link from 'next/link';
-import Logo from '@/components/Logo';
-import ThemeSwitch from '@/components/ThemeSwitch';
-import Sidebar from '@/components/Sidebar';
-import { hrVariant } from '@/utils/motion';
-import AnimatedLine from '@/components/AnimatedLine';
+import { AnimatePresence, LayoutGroup, m } from "framer-motion";
+import { usePathname } from "next/navigation";
+import { useSidebar } from "contexts/sidebarContext";
+import Link from "next/link";
+import Logo from "@/components/Logo";
+import ThemeSwitch from "@/components/ThemeSwitch";
+import Sidebar from "@/components/Sidebar";
+import { hrVariant } from "@/utils/motion";
+import AnimatedLine from "@/components/AnimatedLine";
 
 interface AppRoute {
   title: string;
@@ -16,11 +16,11 @@ interface AppRoute {
 }
 
 export const routes: AppRoute[] = [
-  { title: 'Overview', to: '/' },
-  { title: 'About', to: '/about' },
-  { title: 'Skills', to: '/skills' },
-  { title: 'Projects', to: '/projects' },
-  { title: 'Contact', to: '/contact' },
+  { title: "Overview", to: "/" },
+  { title: "About", to: "/about" },
+  { title: "Skills", to: "/skills" },
+  { title: "Projects", to: "/projects" },
+  { title: "Contact", to: "/contact" },
 ];
 
 export function NavItem({ title, to }: AppRoute) {
@@ -32,7 +32,7 @@ export function NavItem({ title, to }: AppRoute) {
       <m.div
         tabIndex={0}
         className={`relative w-[7.5rem] rounded border-2 border-primary py-2 text-center font-semibold outline-none transition-colors focus-visible:border-black dark:focus-visible:border-white ${
-          !isActive ? 'lg:text-primary lg:hover:bg-primary/10' : 'text-white'
+          !isActive ? "lg:text-primary lg:hover:bg-primary/10" : "text-white"
         }`}
       >
         <span className={`uppercase tracking-wider`}>{title}</span>
@@ -43,8 +43,8 @@ export function NavItem({ title, to }: AppRoute) {
               layoutId="background"
               className="absolute top-0 left-0 w-full h-full -z-10"
               initial={false}
-              animate={{ backgroundColor: '#fb7e14' }}
-              transition={{ type: 'tween', duration: 0.5 }}
+              animate={{ backgroundColor: "#fb7e14" }}
+              transition={{ type: "tween", duration: 0.5 }}
             />
           )}
         </AnimatePresence>
@@ -62,9 +62,9 @@ export default function Navbar() {
       className={`z-30 flex w-full justify-center px-6 py-9 xl:px-10`}
       initial="hidden"
       animate="visible"
-      transition={{ duration: 1.5, ease: 'easeInOut' }}
+      transition={{ duration: 1.5, ease: "easeInOut" }}
       variants={{
-        hidden: { opacity: 0, translateY: '-100%' },
+        hidden: { opacity: 0, translateY: "-100%" },
         visible: { opacity: 1, translateY: 0 },
       }}
     >
@@ -96,7 +96,7 @@ export default function Navbar() {
         <m.div
           className="flex self-center gap-3 justify-self-center lg:hidden"
           initial={false}
-          animate={isOpen ? 'open' : 'closed'}
+          animate={isOpen ? "open" : "closed"}
         >
           <ThemeSwitch />
           <Sidebar />

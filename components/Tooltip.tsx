@@ -1,9 +1,9 @@
-import { ReactNode } from 'react';
-import * as RadixTooltip from '@radix-ui/react-tooltip';
+import { ReactNode } from "react";
+import * as RadixTooltip from "@radix-ui/react-tooltip";
 
 interface TooltipProps {
   content: string;
-  side?: 'top' | 'bottom' | 'left' | 'right';
+  side?: "top" | "bottom" | "left" | "right";
   className?: string;
   defaultOpen?: boolean;
   sideOffset?: number;
@@ -12,7 +12,7 @@ interface TooltipProps {
 
 export default function Tooltip({
   content,
-  side = 'top',
+  side = "top",
   className,
   children,
   sideOffset = 10,
