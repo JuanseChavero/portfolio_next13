@@ -10,7 +10,7 @@ import {
   SiMysql,
   SiCypress,
   SiRedux,
-  SiJest,
+  SiShopify,
 } from "react-icons/si";
 
 export type Skill = {
@@ -72,13 +72,13 @@ export const skills: Skill[] = [
     type: "testing",
   },
   {
-    title: "Jest",
-    icon: <SiJest className={`${iconStyle} group-hover:fill-red-500`} />,
-    type: "testing",
-  },
-  {
     title: "Redux",
     icon: <SiRedux className={`${iconStyle} group-hover:fill-purple-600`} />,
     type: "web",
+  },
+  {
+    title: "Shopify",
+    icon: <SiShopify className={`${iconStyle} group-hover:fill-[#96bf48]`} />,
+    type: "tool",
   },
 ];
