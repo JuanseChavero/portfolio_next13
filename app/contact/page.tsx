@@ -87,13 +87,9 @@ export default function Contact() {
         variants={itemVariant}
       >
         <div className="text-xl">
-          <p className="mb-4">
-            <span className="font-bold text-secondary">STATUS:</span>
-            &nbsp; I am currently not actively seeking new job opportunities.
-          </p>
           <p>
-            However, I&apos;m always interested in hearing new oportunitties, so
-            please feel free to reach out anytime.{" "}
+            I&apos;m open to hear about new opportunities, so please feel free
+            to reach out anytime.{" "}
           </p>
         </div>
       </m.div>
