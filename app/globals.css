@@ -54,8 +54,8 @@ body::-webkit-scrollbar-corner {
 html main {
   background-image: radial-gradient(rgb(0, 0, 0, 0.2) 1px, transparent 0);
   background-size: 40px 40px;
-  background-repeat: space;
-  background-attachment: fixed;
+  background-repeat: repeat;
+  background-attachment: local;
 }
 
 html.dark main {
