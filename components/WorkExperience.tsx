@@ -65,7 +65,7 @@ export default function WorkExperience({
 
   return (
     <m.div
-      className="container flex flex-col max-w-2xl rounded-md text-start lg:flex-row"
+      className="container flex flex-col max-w-2xl rounded-md text-start lg:flex-row min-h-96"
       variants={variants}
     >
       {/* Companies List */}
@@ -113,12 +113,12 @@ export default function WorkExperience({
             {/* Experience information */}
             <div className="flex flex-col sm:flex-row">
               <div className="flex flex-col items-start flex-1 order-2 sm:order-1">
-                <div className="flex gap-6">
+                <div className="flex items-end gap-6">
                   <div className="w-auto">
                     <span className="text-sm text-gray-500 dark:text-gray-400">
                       Company
                     </span>
-                    <p className="text-xl font-bold text-primary">
+                    <p className="text-base font-bold text-primary">
                       <m.a
                         href={selectedCompany.companySite}
                         target="_blank"
@@ -136,7 +136,7 @@ export default function WorkExperience({
                     </span>
                     <p className="text-base font-medium text-gray-700 dark:text-gray-300">
                       {selectedExperience.startDate} -{" "}
-                      {selectedExperience.endDate}
+                      {selectedExperience.endDate ?? "Present"}
                     </p>
                   </div>
                 </div>
@@ -210,9 +210,7 @@ export default function WorkExperience({
             {/* Experience content */}
             <div className="mt-4 min-h-[13rem]">
               <p className="mb-3 text-xl font-semibold text-primary">
-                {selectedExperience.endDate === "Today"
-                  ? "What I'm doing"
-                  : "What I did"}
+                {!selectedExperience.endDate ? "What I'm doing" : "What I did"}
               </p>
               <ul className="ml-4 space-y-2 list-disc marker:text-primary">
                 {selectedExperience.contents.map((content) => (
