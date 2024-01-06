@@ -1,6 +1,6 @@
 import "@/app/globals.css";
 import { Exo, Exo_2 } from "next/font/google";
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 import { WithChildren } from "@/types";
 import Providers from "@/app/providers";
 import Layout from "@/app/customLayout";
@@ -11,7 +11,6 @@ export const metadata: Metadata = {
     default: "Portfolio | Juan S. Chavero",
     template: "%s | Juan S. Chavero",
   },
-  viewport: { width: "device-width", initialScale: 1, minimumScale: 1 },
   keywords:
     "juan segundo chavero, juan s. chavero, juanse chavero, JuanseChavero, juan segundo chavero portfolio, juanse chavero portfolio, software developer, programmer, coding, react, javascript, typescript, nextjs, redux, nodejs, express, flutter, dart, mongodb, mern stack.",
   authors: [{ name: "Juan Segundo Chavero" }],
@@ -32,6 +31,12 @@ export const metadata: Metadata = {
   },
   robots: "index, follow",
   icons: "/favicon.ico",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  minimumScale: 1,
 };
 
 const mainFont = Exo_2({
