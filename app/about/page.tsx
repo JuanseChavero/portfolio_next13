@@ -41,7 +41,29 @@ export default function About() {
           titleAlignment="center"
           variants={itemVariant}
         />
-        <div className="my-1" />
+        <m.div className="mt-1 mb-6 text-center" variants={itemVariant}>
+          Here&apos;s what I&apos;ve been up to in my carrer.
+          <br />
+          You can also see these more in detail in{" "}
+          <m.a
+            className="relative text-secondary"
+            target="_blank"
+            initial="idle"
+            whileHover="hover"
+            animate="idle"
+            href={my.resume}
+          >
+            <span>my resume</span>
+            <m.div
+              className="absolute -bottom-1 left-0 h-0.5 bg-primary"
+              variants={{
+                idle: { width: "10%" },
+                hover: { width: "100%" },
+              }}
+            />
+          </m.a>
+          .
+        </m.div>
         <WorkExperience experiences={experiences} variants={itemVariant} />
       </m.div>
       <m.div className="flex justify-end w-full mt-3" variants={itemVariant}>
