@@ -37,26 +37,14 @@ export const experiences: CompanyExperience[] = [
     experience: [
       {
         startDate: "May 2021",
-        endDate: "May 2022",
+        endDate: "April 2023",
         role: "Frontend Developer",
-        modality: "On-site",
+        modality: "Hybrid",
         time: "Full-time",
         contents: [
-          "Worked with Flutter and Dart, aiming for a multi-platform experience.",
           "Planned, designed and developed the entire frontend for a telecommunications management web application.",
+          "Worked with Flutter and Dart, aiming for a multi-platform experience.",
           "Mantained and improved already existing websites, using plain HTML, CSS and JavaScript.",
-        ],
-      },
-      {
-        startDate: "Feb 2023",
-        endDate: "May 2023",
-        role: "Frontend Developer",
-        modality: "Remote",
-        time: "Full-time",
-        contents: [
-          "Implemented a thorough API structure refactor to improve app security.",
-          "Optimized the app load speed and overall performance.",
-          "Re-designed the UI/UX of certain parts of the app.",
         ],
       },
     ],
