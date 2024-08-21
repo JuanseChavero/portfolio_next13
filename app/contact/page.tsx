@@ -2,14 +2,14 @@
 
 import { useRef, useState } from "react";
 import { AnimatePresence, m } from "framer-motion";
-import { ArrowPathIcon, CheckCircleIcon } from "@heroicons/react/20/solid";
-import { TextArea, Textfield } from "@/components/Textfield";
 import { containerVariant, itemVariant } from "@/utils/motion";
 import { waysOfContact } from "@/data/contact";
 import ContactCard from "@/components/ContactCard";
 import Heading from "@/components/Heading";
 import emailjs from "@emailjs/browser";
 import useField from "@/hooks/useField";
+import EmailSuccess from "../../components/Forms/EmailSuccess";
+import ContactForm from "../../components/Forms/ContactForm";
 
 export default function Contact() {
   const [name, resetName] = useField("text");
@@ -96,34 +96,7 @@ export default function Contact() {
       <m.form ref={formRef} variants={itemVariant}>
         <AnimatePresence mode="wait">
           {sentEmail ? (
-            <m.div
-              key="message"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className={`flex h-[460px] w-full flex-col items-center justify-center`}
-            >
-              <m.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 0.5 }}
-              >
-                <CheckCircleIcon className="w-24 h-24 fill-green-500" />
-              </m.div>
-              <div className="max-w-sm">
-                <p className="mt-4 text-lg text-center text-green-500">
-                  Thank you for reaching out.
-                </p>
-                <p className="mt-4 text-lg text-center text-green-500">
-                  I have received your message and will get back to you as soon
-                  as possible.
-                </p>
-                <p className="mt-4 text-lg text-center text-green-500">
-                  I appreciate your interest and look forward to discussing your
-                  project with you!
-                </p>
-              </div>
-            </m.div>
+            <EmailSuccess />
           ) : (
             <div className="flex flex-col gap-6 lg:flex-row">
               <m.div
@@ -133,38 +106,13 @@ export default function Contact() {
                 exit={{ opacity: 0 }}
                 className="flex flex-col flex-1 w-full gap-5"
               >
-                <Textfield
-                  name="user_name"
-                  placeholder="Your name"
-                  label="Name"
-                  {...name}
+                <ContactForm
+                  name={name}
+                  email={email}
+                  message={message}
+                  isSending={isSending}
+                  onSubmit={onSubmit}
                 />
-                <Textfield
-                  name="user_email"
-                  placeholder="Your email address"
-                  label="Email"
-                  {...email}
-                />
-                <TextArea
-                  name="message"
-                  placeholder="What's on your mind?"
-                  label="Message"
-                  {...message}
-                />
-                <m.button
-                  type="button"
-                  aria-label="Submit form"
-                  onClick={onSubmit}
-                  className={`flex h-12 w-full items-center justify-center rounded border-2 border-primary text-center text-lg font-bold uppercase tracking-widest text-primary outline-2 outline-offset-8 outline-primary transition-[background-color,outline-offset,color] hocus:bg-primary hocus:text-black hocus:outline hocus:outline-offset-4 dark:hocus:text-white ${
-                    isSending ? "cursor-default" : "cursor-pointer"
-                  }`}
-                >
-                  {isSending ? (
-                    <ArrowPathIcon className="w-8 h-8 animate-spin" />
-                  ) : (
-                    "Submit"
-                  )}
-                </m.button>
               </m.div>
               <m.div
                 className="flex flex-col mb-6"

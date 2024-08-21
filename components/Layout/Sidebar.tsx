@@ -10,7 +10,7 @@ import { useRef } from "react";
 import { m } from "framer-motion";
 import { ChakraProvider } from "@chakra-ui/provider";
 import { theme } from "@chakra-ui/theme";
-import { NavItem, routes } from "@/components/Navbar";
+import { NavItem, routes } from "@/components/Layout/Navbar";
 
 const Path = (props: any) => (
   <m.path

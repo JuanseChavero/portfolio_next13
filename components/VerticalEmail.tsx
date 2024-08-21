@@ -1,7 +1,7 @@
 import { m } from "framer-motion";
 import { my } from "@/data/personal";
 
-export default function Email() {
+export default function VerticalEmail() {
   return (
     <m.div
       className="fixed flex-col items-center justify-center hidden h-screen gap-6 right-8 md:flex xl:right-12"

@@ -1,6 +1,6 @@
 import { m } from "framer-motion";
 import { socialMedia, SocialMediaIcon } from "@/data/socialMedia";
-import Tooltip from "@/components/Tooltip";
+import Tooltip from "@/components/Misc/Tooltip";
 
 export function SocialMediaIcon({
   icon,
@@ -13,7 +13,7 @@ export function SocialMediaIcon({
     <Tooltip
       content={title}
       side={tooltipSide}
-      className="uppercase"
+      className="font-bold tracking-wider uppercase"
       sideOffset={sideOffset}
     >
       <a

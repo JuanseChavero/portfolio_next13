@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, m } from "framer-motion";
 import { ArrowUpIcon } from "@heroicons/react/20/solid";
-import Tooltip from "@/components/Tooltip";
+import Tooltip from "@/components/Misc/Tooltip";
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);

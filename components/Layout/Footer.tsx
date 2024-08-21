@@ -1,9 +1,9 @@
 import { m } from "framer-motion";
-import { SocialMediaIcon } from "@/components/SocialMedia";
+import { SocialMediaIcon } from "@/components/Misc/SocialMedia";
 import { my } from "@/data/personal";
 import { socialMedia } from "@/data/socialMedia";
 import { hrVariant } from "@/utils/motion";
-import AnimatedLine from "@/components/AnimatedLine";
+import AnimatedLine from "@/components/Misc/AnimatedLine";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();

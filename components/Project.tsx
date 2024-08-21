@@ -3,7 +3,7 @@ import { FiExternalLink } from "react-icons/fi";
 import { SiGithub } from "react-icons/si";
 import { Variants, m } from "framer-motion";
 import { Project } from "@/data/projects";
-import Tooltip from "@/components/Tooltip";
+import Tooltip from "@/components/Misc/Tooltip";
 
 export default function DisplayProject({
   name,

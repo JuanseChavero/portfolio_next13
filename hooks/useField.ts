@@ -2,6 +2,14 @@
 
 import { ChangeEvent, HTMLInputTypeAttribute, useState } from "react";
 
+export type Field = {
+  value: string;
+  onChange: (
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
+  type: HTMLInputTypeAttribute;
+};
+
 export default function useField(type: HTMLInputTypeAttribute) {
   const [value, setValue] = useState("");
 

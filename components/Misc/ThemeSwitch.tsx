@@ -39,7 +39,7 @@ export default function ThemeSwitch() {
 
   return (
     <m.button
-      className="flex items-center justify-center p-2 border-2 rounded outline-none cursor-pointer border-primary hover:bg-primary/20 focus-visible:border-black dark:focus-visible:border-white"
+      className="flex items-center justify-center p-2 border-2 rounded cursor-pointer outline-2 outline-offset-8 outline-primary border-primary hover:bg-primary/20 focus-visible:border-black dark:focus-visible:border-white hocus:outline hocus:outline-offset-4 transition-[background-color,outline-offset,color]"
       data-is-darkmode={currentThemeIsDark}
       onClick={switchTheme}
       tabIndex={0}

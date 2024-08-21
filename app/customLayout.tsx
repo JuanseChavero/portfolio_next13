@@ -1,12 +1,12 @@
 "use client";
 
 import { domAnimation, LazyMotion } from "framer-motion";
-import Email from "@/components/Email";
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
-import PageWrapper from "@/components/PageWrapper";
-import ScrollToTop from "@/components/ScrollToTop";
-import SocialMedia from "@/components/SocialMedia";
+import VerticalEmail from "@/components/VerticalEmail";
+import Footer from "@/components/Layout/Footer";
+import Navbar from "@/components/Layout/Navbar";
+import PageWrapper from "@/components/Layout/PageWrapper";
+import ScrollToTop from "@/components/Misc/ScrollToTop";
+import SocialMedia from "@/components/Misc/SocialMedia";
 import { WithChildren } from "@/types";
 
 export default function Layout({ children }: WithChildren) {
@@ -19,7 +19,7 @@ export default function Layout({ children }: WithChildren) {
         <Navbar />
         <PageWrapper>{children}</PageWrapper>
         <SocialMedia />
-        <Email />
+        <VerticalEmail />
         <Footer />
       </main>
     </LazyMotion>

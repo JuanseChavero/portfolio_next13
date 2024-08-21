@@ -4,11 +4,11 @@ import { AnimatePresence, LayoutGroup, m } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { useSidebar } from "contexts/sidebarContext";
 import Link from "next/link";
-import Logo from "@/components/Logo";
-import ThemeSwitch from "@/components/ThemeSwitch";
-import Sidebar from "@/components/Sidebar";
+import Logo from "@/components/Misc/Logo";
+import ThemeSwitch from "@/components/Misc/ThemeSwitch";
+import Sidebar from "@/components/Layout/Sidebar";
 import { hrVariant } from "@/utils/motion";
-import AnimatedLine from "@/components/AnimatedLine";
+import AnimatedLine from "@/components/Misc/AnimatedLine";
 
 interface AppRoute {
   title: string;
