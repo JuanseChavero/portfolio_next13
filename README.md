@@ -14,7 +14,3 @@
   <li>Next-themes</li>
   <li>Radix-UI</li>
 </ul>
-
-## 🚨 License
-
-The content of this portfolio, including but not limited to the code, text, and images, is not under any formal license. This means that while you are welcome to view and use the content for personal or educational purposes, <strong>you cannot distribute or commercially exploit it without my explicit permission.</strong>
